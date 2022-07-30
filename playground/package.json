@@ -1,0 +1,13 @@
+{
+  "author": "",
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {
+    "vite-node": "^0.19.1"
+  },
+  "main": "index.js",
+  "name": "playground",
+  "scripts": {
+    "start": "vite-node index.ts -w"
+  }
+}
