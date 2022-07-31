@@ -1,6 +1,14 @@
-// Store all instances of Temir (instance.js) to ensure that consecutive render() calls
-// use the same instance of Temir and don't create a new one
-//
-// This map has to be stored in a separate file, because render.js creates instances,
-// but instance.js should delete itself from the map on unmount
-export default new WeakMap()
+export default {
+  has(key) {
+    return !!global[key]
+  },
+  get(key) {
+    return global[key]
+  },
+  set(key, value) {
+    global[key] = value
+  },
+  delete(key) {
+    delete global[key]
+  },
+}

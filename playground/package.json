@@ -1,10 +1,11 @@
 {
   "author": "",
-  "dependencies": {},
   "description": "",
   "devDependencies": {
+    "esno": "^0.16.3",
     "vite-node": "^0.19.1"
   },
+  "license": "MIT",
   "main": "index.js",
   "name": "playground",
   "scripts": {

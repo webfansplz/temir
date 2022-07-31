@@ -3,6 +3,9 @@ import type { DOMElement, DOMNode } from './dom'
 import { appendChildNode, createElement, createTextNode, findRootNode, setTextNodeValue, updateProps } from './dom'
 import type { Styles } from './dom/styles'
 
+global.__VUE_OPTIONS_API__ = false
+global.__VUE_PROD_DEVTOOLS__ = false
+
 interface Props {
   [key: string]: unknown
 }

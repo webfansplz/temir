@@ -37,7 +37,6 @@ const create = (stream: Writable, { showCursor = false } = {}): LogUpdate => {
   render.done = () => {
     previousOutput = ''
     previousLineCount = 0
-
     if (!showCursor) {
       cliCursor.show()
       hasHiddenCursor = false

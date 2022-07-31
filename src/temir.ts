@@ -2,14 +2,17 @@ import originalIsCI from 'is-ci'
 import type { DebouncedFunc } from 'lodash'
 import { throttle } from 'lodash'
 import ansiEscapes from 'ansi-escapes'
-import type { Component } from 'vue'
+import type { Component, App as VueAppInstance } from 'vue'
 import { defineComponent, h } from 'vue'
 import signalExit from 'signal-exit'
+import patchConsole from 'patch-console'
+import autoBind from './utils/autoBind'
 import * as dom from './dom'
 import renderer from './createRenderer'
 import type { LogUpdate } from './log-update'
 import logUpdate from './log-update'
 import render from './renderer'
+import instances from './instances'
 import App from './components/App'
 
 const isCI = process.env.CI === 'false' ? false : originalIsCI
@@ -30,14 +33,19 @@ export default class Temir {
   private readonly throttledLog: LogUpdate | DebouncedFunc<LogUpdate>
   // Ignore last render after unmounting a tree to prevent empty output before exit
   private isUnmounted: boolean
-  private readonly rootNode: dom.DOMElement
+  private rootNode: dom.DOMElement
   private fullStaticOutput: string
   private lastOutput: string
+  private exitPromise?: Promise<void>
+  private restoreConsole?: () => void
+  private readonly unsubscribeResize?: () => void
+  private vueApp: VueAppInstance
 
   constructor(options: TemirOptions) {
+    autoBind(this)
+
     this.options = options
     this.rootNode = dom.createNode('temir-root')
-
     this.rootNode.onRender = this.onRender
     this.log = logUpdate.create(options.stdout)
     this.throttledLog = options.debug
@@ -55,8 +63,21 @@ export default class Temir {
 
     // Unmount when process exits
     this.unsubscribeExit = signalExit(this.unmount, { alwaysLast: false })
+
+    if (options.patchConsole)
+      this.patchConsole()
+
+    if (!isCI) {
+      options.stdout.on('resize', this.onRender)
+
+      this.unsubscribeResize = () => {
+        options.stdout.off('resize', this.onRender)
+      }
+    }
   }
 
+  resolveExitPromise: () => void = () => { }
+  rejectExitPromise: (reason?: Error) => void = () => { }
   unsubscribeExit: () => void = () => { }
 
   onRender: () => void = () => {
@@ -110,10 +131,11 @@ export default class Temir {
     this.lastOutput = output
   }
 
-  render(node: Component) {
+  createVueApp(node: Component) {
     const options = this.options
     /* eslint-disable @typescript-eslint/no-this-alias */
     const context = this
+
     const Root = defineComponent({
       setup() {
         return () => h(App, {
@@ -129,20 +151,68 @@ export default class Temir {
       },
     })
 
-    const app = renderer.createApp(Root)
-    app.config.warnHandler = function () {
-      return null
+    this.vueApp = renderer.createApp(Root)
+    this.vueApp.config.warnHandler = () => null
+    this.vueApp.mount(this.rootNode)
+  }
+
+  render(node) {
+    this.rootNode = dom.createNode('temir-root')
+    this.rootNode.onRender = this.onRender
+    this.vueApp?.unmount()
+    this.createVueApp(node)
+    this.onRender()
+  }
+
+  unmount(error?: Error | number | null): void {
+    if (this.isUnmounted)
+      return
+
+    this.onRender()
+    this.unsubscribeExit()
+
+    if (typeof this.restoreConsole === 'function')
+      this.restoreConsole()
+
+    if (typeof this.unsubscribeResize === 'function')
+      this.unsubscribeResize()
+
+    // CIs don't handle erasing ansi escapes well, so it's better to
+    // only render last frame of non-static output
+    if (isCI)
+      this.options.stdout.write(`${this.lastOutput}\n`)
+
+    else if (!this.options.debug)
+      this.log.done()
+
+    this.isUnmounted = true
+
+    this.vueApp?.unmount()
+
+    instances.delete(this.options.stdout)
+
+    if (error instanceof Error)
+      this.rejectExitPromise(error)
+
+    else
+      this.resolveExitPromise()
+  }
+
+  waitUntilExit(): Promise<void> {
+    if (!this.exitPromise) {
+      this.exitPromise = new Promise((resolve, reject) => {
+        this.resolveExitPromise = resolve
+        this.rejectExitPromise = reject
+      })
     }
-    app.mount(this.rootNode)
-    this.onRender()
+
+    return this.exitPromise
   }
 
-  unmount() {
-    this.onRender()
+  clear(): void {
+    if (!isCI && !this.options.debug)
+      this.log.clear()
   }
-
-  waitUntilExit() { }
-  clear() { }
 
   writeToStdout(data: string): void {
     if (this.isUnmounted)
@@ -181,5 +251,17 @@ export default class Temir {
     this.log.clear()
     this.options.stderr.write(data)
     this.log(this.lastOutput)
+  }
+
+  patchConsole(): void {
+    if (this.options.debug)
+      return
+
+    this.restoreConsole = patchConsole((stream, data) => {
+      if (stream === 'stdout')
+        this.writeToStdout(data)
+
+      this.writeToStderr(data)
+    })
   }
 }
