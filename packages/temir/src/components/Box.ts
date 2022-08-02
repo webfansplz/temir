@@ -1,9 +1,8 @@
-import type { Except } from 'type-fest'
 import { defineComponent, h } from '@vue/runtime-core'
 import { identity, pickBy } from 'lodash-es'
 import type { Styles } from '../dom/styles'
 
-export type BoxProps = Except<Styles, 'textWrap'> & {
+export interface BoxProps extends Omit<Styles, 'textWrap'> {
   /**
    * Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
    *

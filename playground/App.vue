@@ -1,22 +1,23 @@
 <script lang="ts">
-import { computed, defineComponent, h, ref } from '@vue/runtime-core'
+import { computed, defineComponent, ref } from '@vue/runtime-core'
 import { Box, Text } from '@temir/core'
 
 export default defineComponent({
   components: {
     Box,
+    // eslint-disable-next-line vue/no-reserved-component-names
     Text,
   },
   setup() {
     const count = ref(0)
-    const j = computed(() => count.value === 0 ? 'center' : 'flex-start')
-    const c = computed(() => count.value === 0 ? 'red' : 'blue')
+    const alignment = computed(() => count.value === 0 ? 'center' : 'flex-start')
+    const color = computed(() => count.value === 0 ? 'red' : 'blue')
     setInterval(() => {
       // count.value++
       count.value = count.value === 0 ? 1 : 0
     }, 1000)
     return {
-      j, c,
+      alignment, color,
     }
   },
 })
@@ -24,12 +25,12 @@ export default defineComponent({
 
 <template>
   <Box
-    width="50px"
-    :justify-content="j"
     border-style="round"
-    margin:2
+    :width="50"
+    :justify-content="alignment"
+    :margin="2"
   >
-    <Text :color="c">
+    <Text :color="color">
       Hello world!!
     </Text>
   </Box>

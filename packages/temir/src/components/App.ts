@@ -6,7 +6,7 @@ const TAB = '\t'
 const SHIFT_TAB = '\u001B[Z'
 const ESC = '\u001B'
 
-interface AppProps {
+export interface AppProps {
   children: Component
   stdin: NodeJS.ReadStream
   stdout: NodeJS.WriteStream

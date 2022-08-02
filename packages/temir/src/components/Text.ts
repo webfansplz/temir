@@ -1,6 +1,5 @@
 import type { ForegroundColor } from 'chalk'
 import chalk from 'chalk'
-import type { LiteralUnion } from 'type-fest'
 import { defineComponent, h } from '@vue/runtime-core'
 import colorize from '../dom/colorize'
 import type { Styles } from '../dom/styles'
@@ -9,12 +8,12 @@ export interface TextProps {
   /**
    * Change text color. Temir uses chalk under the hood, so all its functionality is supported.
    */
-  readonly color?: LiteralUnion<typeof ForegroundColor, string>
+  readonly color?: typeof ForegroundColor
 
   /**
    * Same as `color`, but for background.
    */
-  readonly backgroundColor?: LiteralUnion<typeof ForegroundColor, string>
+  readonly backgroundColor?: typeof ForegroundColor
 
   /**
    * Dim the color (emit a small amount of light).
@@ -59,6 +58,7 @@ export interface TextProps {
  * This component can display text, and change its style to make it colorful, bold, underline, italic or strikethrough.
  */
 export const Text = defineComponent<TextProps>({
+  // eslint-disable-next-line vue/no-reserved-component-names
   name: 'Text',
   props: ([
     'color',

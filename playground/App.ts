@@ -19,7 +19,7 @@ export default defineComponent({
       marginRight: 2,
     }, h(Text, {
       color: c.value,
-    }, `Hello World!!`))
+    }, 'Hello World!!'))
   },
 })
 
