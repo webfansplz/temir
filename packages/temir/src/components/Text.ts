@@ -109,6 +109,7 @@ export const Text = defineComponent<TextProps>({
       const children = slots.default?.()
       return h('temir-text', {
         style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap' },
+        _temir_text: children,
         internal_transform: transform,
       }, children)
     }

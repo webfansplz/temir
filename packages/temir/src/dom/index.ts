@@ -133,7 +133,9 @@ export const appendChildNode = (
   childNode: DOMElement,
   node: DOMElement,
 ): void => {
-  if (!childNode || (!(childNode as unknown as TextNode).nodeValue && !childNode.yogaNode))
+  if (
+    !childNode
+    || (!(childNode as unknown as TextNode).nodeValue && !childNode.yogaNode && childNode.nodeName !== 'temir-virtual-text'))
     return
   if (childNode.parentNode)
     removeChildNode(childNode.parentNode, childNode)
@@ -190,7 +192,22 @@ export const setStyle = (node: DOMNode, style: Styles): void => {
     applyStyles(node.yogaNode, style)
 }
 
+export const createNewlineNode = (node: DOMElement, content: string) => {
+  const textNode = createTextNode(content)
+  appendChildNode(textNode as unknown as DOMElement, node)
+}
+
 export const updateProps = (node, key, value) => {
+  // update Newline Component count
+  if (key === '_temir_newline' && node.parentNode) {
+    node.childNodes = []
+    createNewlineNode(node, value)
+    return
+  }
+  // update Text Component text
+  if (key === '_temir_text')
+    return
+
   if (key === 'style')
     setStyle(node, value as Styles)
 
@@ -200,12 +217,17 @@ export const updateProps = (node, key, value) => {
   else if (key === 'internal_static')
     node.internal_static = true
 
-  else
-    setAttribute(node, key, value as DOMNodeAttribute)
+  else setAttribute(node, key, value as DOMNodeAttribute)
 }
 
 export const createElement = (nodeName: string, _, __, props): DOMElement => {
-  const node = createNode(nodeName)
+  const isVirtualText = nodeName === 'temir-text' && props._temir_newline !== undefined
+  const type = isVirtualText ? 'temir-virtual-text' : nodeName
+  const node = createNode(type)
+
+  // Handle Newline
+  props._temir_newline && createNewlineNode(node, props._temir_newline)
+
   for (const key in props)
     updateProps(node, key, props[key])
 

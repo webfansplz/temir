@@ -1,6 +1,7 @@
 {
   "extends": "@antfu",
   "rules":{
-    "no-console":0
+    "no-console":0,
+    "@typescript-eslint/ban-ts-comment":0
   }
 }
