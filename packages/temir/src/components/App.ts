@@ -1,6 +1,6 @@
-import type { Component } from 'vue'
-import { defineComponent, h, onMounted, onUnmounted, provide, ref } from 'vue'
-import cliCursor from 'cli-cursor'
+import type { Component } from '@vue/runtime-core'
+import { defineComponent, h, onMounted, onUnmounted, provide, ref } from '@vue/runtime-core'
+import cliCursor from '../utils/cli-cursor'
 
 const TAB = '\t'
 const SHIFT_TAB = '\u001B[Z'
@@ -22,7 +22,7 @@ interface Focusable {
   readonly isActive: boolean
 }
 
-const App = defineComponent<AppProps>({
+export const App = defineComponent<AppProps>({
   props: (['children', 'stdin', 'stdout', 'stderr', 'writeToStdout', 'writeToStderr', 'exitOnCtrlC', 'onExit'] as undefined),
   setup(props) {
     // Count how many components enabled raw mode to avoid disabling
@@ -58,10 +58,10 @@ const App = defineComponent<AppProps>({
     provide('focus', focus)
 
     onMounted(() => {
-      cliCursor.hide(props.stdout)
+      (cliCursor as any).hide(props.stdout)
     })
     onUnmounted(() => {
-      cliCursor.show(props.stdout)
+      (cliCursor as any).show(props.stdout)
     })
 
     // Determines if TTY is supported on the provided stdin
@@ -239,4 +239,3 @@ const App = defineComponent<AppProps>({
   },
 })
 
-export default App

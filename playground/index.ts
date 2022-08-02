@@ -1,5 +1,3 @@
-import { render } from '../src/index'
-import App from './App'
+import { runDevServer } from '@temir/cli'
 
-render(App)
-
+runDevServer('main.ts')

@@ -1,6 +1,8 @@
+// @ts-nocheck
+
 import type { Writable } from 'stream'
-import ansiEscapes from 'ansi-escapes'
-import cliCursor from 'cli-cursor'
+import cliCursor from './utils/cli-cursor'
+import ansiEscapes from './utils/ansi-escapes'
 
 export interface LogUpdate {
   clear: () => void

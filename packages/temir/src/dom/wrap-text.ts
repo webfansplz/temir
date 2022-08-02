@@ -1,5 +1,5 @@
-import wrapAnsi from 'wrap-ansi'
-import cliTruncate from 'cli-truncate'
+import cliTruncate from '../utils/cli-truncate'
+import wrapAnsi from '../utils/wrap-ansi'
 import type { Styles } from './styles'
 
 const cache: Record<string, string> = {}

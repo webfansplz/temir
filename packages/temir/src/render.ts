@@ -1,8 +1,9 @@
-import { Stream } from 'stream'
-import type { Component } from 'vue'
+import stream from 'stream'
+import type { Component } from '@vue/runtime-core'
 import instances from './instances'
 import Temir from './temir'
 import type { TemirOptions } from './temir'
+
 export interface RenderOptions {
   /**
    * Output stream where app will be rendered.
@@ -71,7 +72,13 @@ type RenderFunction = <Props, K extends NodeJS.WriteStream | RenderOptions>(
 const getOptions = (
   stdout: NodeJS.WriteStream | RenderOptions | undefined = {},
 ): RenderOptions => {
-  if (stdout instanceof Stream) {
+  // await new Promise((resolve) => {
+  //   import('stream').then(({ Stream }) => {
+  //     console.log(Stream)
+  //   })
+  // })
+
+  if (stdout instanceof stream.Stream) {
     return {
       stdout,
       stdin: process.stdin,
@@ -101,8 +108,8 @@ const getInstance = (
 }
 
 /**
- * Mount a component and render the output.
- */
+   * Mount a component and render the output.
+   */
 const render: RenderFunction = (node, options): Instance => {
   const temirOptions: TemirOptions = {
     stdout: process.stdout,
@@ -119,6 +126,7 @@ const render: RenderFunction = (node, options): Instance => {
     () => {
       const temir = new Temir(temirOptions)
       temir.createVueApp(node)
+      temir.onRender()
       return temir
     },
     node,

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Gets all non-builtin properties up the prototype chain.
 const getAllProperties = (object) => {
   const properties = new Set()

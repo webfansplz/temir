@@ -1,9 +1,9 @@
 import type { Except } from 'type-fest'
-import { defineComponent, h } from 'vue'
-import { identity, pickBy } from 'lodash'
+import { defineComponent, h } from '@vue/runtime-core'
+import { identity, pickBy } from 'lodash-es'
 import type { Styles } from '../dom/styles'
 
-export type Props = Except<Styles, 'textWrap'> & {
+export type BoxProps = Except<Styles, 'textWrap'> & {
   /**
    * Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
    *
@@ -51,7 +51,7 @@ export type Props = Except<Styles, 'textWrap'> & {
  * `<Box>` is an essential Temir component to build your layout. It's like `<div style="display: flex">` in the browser.
  */
 
-const Box = defineComponent<Props>({
+export const Box = defineComponent<BoxProps>({
   name: 'Box',
   props: ([
     'textWrap',
@@ -111,4 +111,3 @@ const Box = defineComponent<Props>({
   },
 })
 
-export default Box

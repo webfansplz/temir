@@ -14,7 +14,7 @@ const squashTextNodes = (node: DOMElement): string => {
       let nodeText = ''
 
       if (childNode.nodeName === '#text') {
-        nodeText = childNode.nodeValue
+        nodeText = (childNode as any).nodeValue
       }
       else {
         if (
@@ -27,9 +27,9 @@ const squashTextNodes = (node: DOMElement): string => {
         // apply children transform, so we have to do it manually here for each text node
         if (
           nodeText.length > 0
-          && typeof childNode.internal_transform === 'function'
+          && typeof (childNode as any).internal_transform === 'function'
         )
-          nodeText = childNode.internal_transform(nodeText)
+          nodeText = (childNode as any).internal_transform(nodeText)
       }
       text += nodeText
     }
