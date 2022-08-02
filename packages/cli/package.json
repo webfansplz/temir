@@ -1,0 +1,57 @@
+{
+  "name": "@temir/cli",
+  "type": "module",
+  "version": "0.0.1-alpha.1",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "cli",
+    "stdout",
+    "components",
+    "command-line",
+    "print",
+    "render",
+    "colors",
+    "text"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "temir": "./temir-cli.mjs"
+  },
+  "files": [
+    "dist/**/*.cjs",
+    "dist/**/*.mjs",
+    "dist/**/*.d.ts",
+    "temir-cli.mjs"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "2.3.3",
+    "@vitejs/plugin-vue-jsx": "1.3.10",
+    "@vue/compiler-sfc": "^3.2.37",
+    "cac": "^6.7.12",
+    "esbuild-plugin-vue": "^0.2.4",
+    "tsup": "^6.2.1",
+    "vite": "^2.9.14",
+    "vite-node": "^0.6.3"
+  },
+  "devDependencies": {
+    "unbuild": "^0.7.6"
+  }
+}
