@@ -8,7 +8,7 @@ export interface LinkProps {
 }
 
 /**
- * Adds one or more newline (\n) characters. Must be used within <Text> components.
+ * Link.
  */
 export const Link = defineComponent<LinkProps>({
   name: 'Link',

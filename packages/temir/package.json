@@ -51,6 +51,7 @@
     "chalk": "^4.1.2",
     "cli-boxes": "^2.2.1",
     "cli-cursor": "^4.0.0",
+    "cli-spinners": "^2.7.0",
     "cli-truncate": "^3.1.0",
     "eastasianwidth": "^0.2.0",
     "emoji-regex": "^10.1.0",
