@@ -158,7 +158,21 @@ export const setTextNodeValue = (node: TextNode, text: string): void => {
   if (typeof text !== 'string')
     text = String(text)
 
-  node.nodeValue = text
+  if ((node as unknown as DOMElement).nodeName === 'temir-virtual-text') {
+    (node as unknown as DOMElement).childNodes = []
+    const textNode: TextNode = {
+      nodeName: '#text',
+      nodeValue: text,
+      yogaNode: undefined,
+      parentNode: null,
+      style: {},
+    }
+    appendChildNode(textNode as unknown as DOMElement, (node as unknown as DOMElement))
+  }
+  else {
+    node.nodeValue = text
+  }
+
   const rootNode = findRootNode(node)
   markNodeAsDirty(node)
   rootNode?.onRender()
@@ -192,18 +206,7 @@ export const setStyle = (node: DOMNode, style: Styles): void => {
     applyStyles(node.yogaNode, style)
 }
 
-export const createNewlineNode = (node: DOMElement, content: string) => {
-  const textNode = createTextNode(content)
-  appendChildNode(textNode as unknown as DOMElement, node)
-}
-
 export const updateProps = (node, key, value) => {
-  // update Newline Component count
-  if (key === '_temir_newline' && node.parentNode) {
-    node.childNodes = []
-    createNewlineNode(node, value)
-    return
-  }
   // update Text Component text
   if (key === '_temir_text')
     return
@@ -221,12 +224,8 @@ export const updateProps = (node, key, value) => {
 }
 
 export const createElement = (nodeName: string, _, __, props): DOMElement => {
-  const isVirtualText = nodeName === 'temir-text' && props._temir_newline !== undefined
-  const type = isVirtualText ? 'temir-virtual-text' : nodeName
+  const type = nodeName === 'temir-text' && props.isInsideText ? 'temir-virtual-text' : nodeName
   const node = createNode(type)
-
-  // Handle Newline
-  props._temir_newline && createNewlineNode(node, props._temir_newline)
 
   for (const key in props)
     updateProps(node, key, props[key])

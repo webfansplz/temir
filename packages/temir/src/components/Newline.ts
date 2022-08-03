@@ -1,4 +1,4 @@
-import { defineComponent, h } from '@vue/runtime-core'
+import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
 
 export interface NewlineProps {
   /**
@@ -17,12 +17,15 @@ export const Newline = defineComponent<NewlineProps>({
   props: ([
     'count',
   ] as undefined),
-  setup(props) {
+  setup(props, { slots }) {
+    const instance = getCurrentInstance()
     return () => {
+      const children = slots.default?.()
       const count = props.count ?? 1
       return h('temir-text', {
-        _temir_newline: '\n'.repeat(count),
-      })
+        _temir_text: children,
+        isInsideText: instance.parent.type.name !== 'Box',
+      }, '\n'.repeat(count))
     }
   },
 })

@@ -1,6 +1,6 @@
 import type { ForegroundColor } from 'chalk'
 import chalk from 'chalk'
-import { defineComponent, h } from '@vue/runtime-core'
+import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
 import colorize from '../dom/colorize'
 import type { Styles } from '../dom/styles'
 
@@ -60,6 +60,7 @@ export interface TextProps {
 export const Text = defineComponent<TextProps>({
   // eslint-disable-next-line vue/no-reserved-component-names
   name: 'Text',
+  inheritAttrs: false,
   props: ([
     'color',
     'backgroundColor',
@@ -73,6 +74,7 @@ export const Text = defineComponent<TextProps>({
     'children',
   ] as undefined),
   setup(props, { slots }) {
+    const instance = getCurrentInstance()
     const children = slots.default?.()
     if (children === undefined || children === null)
       return null
@@ -110,6 +112,7 @@ export const Text = defineComponent<TextProps>({
       return h('temir-text', {
         style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap' },
         _temir_text: children,
+        isInsideText: instance.parent.type.name !== 'Box',
         internal_transform: transform,
       }, children)
     }
