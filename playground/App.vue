@@ -1,6 +1,6 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/runtime-core'
-import { Box, Newline, Spinner, Text } from '@temir/core'
+import { Box, Spacer, Spinner, Text } from '@temir/core'
 
 export default defineComponent({
   components: {
@@ -8,7 +8,7 @@ export default defineComponent({
     // eslint-disable-next-line vue/no-reserved-component-names
     Text,
     // Newline,
-    Spinner,
+    Spacer,
   },
   setup() {
     const count = ref(0)
@@ -27,14 +27,16 @@ export default defineComponent({
 
 <template>
   <Box
-    justify-content="center"
+    flex-direction="column"
+    :height="20"
     border-style="round"
     :width="50"
     :margin="1"
   >
     <Text color="yellow">
-      <Spinner type="dots" />
-      Hello world!!!
+      Top
     </Text>
+    <Spacer />
+    <Text>Bottom</Text>
   </Box>
 </template>
