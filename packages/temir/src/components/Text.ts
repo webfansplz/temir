@@ -110,7 +110,7 @@ export const Text = defineComponent<TextProps>({
     return () => {
       const children = slots.default?.()
       return h('temir-text', {
-        style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap' },
+        style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap', ...props },
         _temir_text: children,
         isInsideText: instance.parent.type.name !== 'Box',
         internal_transform: transform,

@@ -31,7 +31,9 @@
   },
   "scripts": {
     "dev": "pnpm --filter ./packages run dev --parallel",
-    "build": "pnpm --filter ./packages run build --parallel"
+    "build": "pnpm --filter ./packages run build --parallel",
+    "build-temir": "pnpm --filter ./packages/temir run build --parallel"
+
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",

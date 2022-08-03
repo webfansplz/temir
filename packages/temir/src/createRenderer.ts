@@ -2,7 +2,7 @@
 
 import { createRenderer } from '@vue/runtime-core'
 import type { DOMElement, DOMNode } from './dom'
-import { appendChildNode, createElement, createTextNode, setTextNodeValue, updateProps } from './dom'
+import { appendChildNode, createElement, createTextNode, findRootNode, setTextNodeValue, updateProps } from './dom'
 
 global.__VUE_OPTIONS_API__ = true
 global.__VUE_PROD_DEVTOOLS__ = true
@@ -17,11 +17,13 @@ const renderder = createRenderer<DOMNode, DOMElement>({
     if (!key.startsWith('_temir_'))
       el[key] = newProps
     updateProps(el, key, newProps)
-    // findRootNode(el)?.onRender()
+    findRootNode(el)?.onRender()
   },
   setText: setTextNodeValue,
   setElementText: setTextNodeValue,
-  createComment() { },
+  createComment() {
+    return null
+  },
   remove() { },
   parentNode() { },
   nextSibling() { },

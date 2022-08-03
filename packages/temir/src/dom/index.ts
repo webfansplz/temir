@@ -136,7 +136,7 @@ export const appendChildNode = (
   if (
     !childNode
     || (!(childNode as unknown as TextNode).nodeValue && !childNode.yogaNode && childNode.nodeName !== 'temir-virtual-text'))
-    return
+    return null
   if (childNode.parentNode)
     removeChildNode(childNode.parentNode, childNode)
 
@@ -157,7 +157,6 @@ export const appendChildNode = (
 export const setTextNodeValue = (node: TextNode, text: string): void => {
   if (typeof text !== 'string')
     text = String(text)
-
   if ((node as unknown as DOMElement).nodeName === 'temir-virtual-text') {
     (node as unknown as DOMElement).childNodes = []
     const textNode: TextNode = {

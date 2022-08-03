@@ -1,4 +1,5 @@
 import { defineComponent, h } from '@vue/runtime-core'
+import { useStdin } from '../composables'
 import { Box } from './'
 
 /**

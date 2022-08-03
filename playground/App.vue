@@ -1,6 +1,6 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/runtime-core'
-import { Box, Spacer, Spinner, Text } from '@temir/core'
+import { Box, Spacer, Spinner, Tab, Tabs, Text, TextInput } from '@temir/core'
 
 export default defineComponent({
   components: {
@@ -9,6 +9,9 @@ export default defineComponent({
     Text,
     // Newline,
     Spacer,
+    TextInput,
+    Tabs,
+    Tab,
   },
   setup() {
     const count = ref(0)
@@ -18,15 +21,40 @@ export default defineComponent({
       count.value++
       // count.value = count.value === 0 ? 1 : 0
     }, 1000)
+
+    const query = ref('')
+    function setQuery(value) {
+      query.value = value
+    }
+
+    function onChange(id) {
+      console.log(id)
+    }
     return {
-      alignment, color, count,
+      alignment, color, count, query, setQuery, onChange,
     }
   },
 })
 </script>
 
 <template>
-  <Box
+  <!-- <Box :margin-right="1">
+    <Text>Enter your query:</Text>
+  </Box> -->
+
+  <Tabs :on-change="onChange">
+    <Tab name="foo">
+      Foo
+    </Tab>
+    <Tab name="bar">
+      Bar
+    </Tab>
+    <Tab name="baz">
+      Baz
+    </Tab>
+  </Tabs>
+
+  <!-- <Box
     flex-direction="column"
     :height="20"
     border-style="round"
@@ -38,5 +66,5 @@ export default defineComponent({
     </Text>
     <Spacer />
     <Text>Bottom</Text>
-  </Box>
+  </Box> -->
 </template>
