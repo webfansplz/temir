@@ -38,11 +38,11 @@ export default defineComponent({
 </script>
 
 <template>
-  <!-- <Box :margin-right="1">
+  <Box :margin-right="1">
     <Text>Enter your query:</Text>
-  </Box> -->
+  </Box>
 
-  <Tabs :on-change="onChange">
+  <!-- <Tabs :on-change="onChange">
     <Tab name="foo">
       Foo
     </Tab>
@@ -52,7 +52,7 @@ export default defineComponent({
     <Tab name="baz">
       Baz
     </Tab>
-  </Tabs>
+  </Tabs> -->
 
   <!-- <Box
     flex-direction="column"

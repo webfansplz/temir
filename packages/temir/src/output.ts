@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import sliceAnsi from './utils/slice-ansi'
-import stringWidth from './utils/string-width'
+import sliceAnsi from 'slice-ansi'
+import stringWidth from 'string-width'
 import type { OutputTransformer } from './render-node-to-output'
 
 /**

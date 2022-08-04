@@ -1,4 +1,4 @@
-import widestLine from '../utils/widest-line'
+import widestLine from 'widest-line'
 
 const cache: Record<string, Output> = {}
 

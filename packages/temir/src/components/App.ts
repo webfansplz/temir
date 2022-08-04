@@ -1,6 +1,6 @@
 import type { Component } from '@vue/runtime-core'
 import { defineComponent, h, onMounted, onUnmounted, provide, ref } from '@vue/runtime-core'
-import cliCursor from '../utils/cli-cursor'
+import cliCursor from 'cli-cursor'
 
 const TAB = '\t'
 const SHIFT_TAB = '\u001B[Z'
