@@ -16,7 +16,7 @@ function reload(runner: ViteNodeRunner, files: string[]) {
   return Promise.all(files.map(file => runner.executeId(file)))
 }
 
-export async function runDevServer(file = 'main.ts') {
+export async function runDevServer(file = 'src/main.ts') {
   const server = await createServer({
     clearScreen: false,
     logLevel: 'error',

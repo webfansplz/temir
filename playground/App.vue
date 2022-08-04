@@ -30,7 +30,7 @@ export default defineComponent({
     }
 
     function onChange(id) {
-      console.log(id)
+      // console.log(id)
     }
     return {
       alignment, color, count, query, setQuery, onChange,
