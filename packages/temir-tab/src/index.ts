@@ -21,7 +21,7 @@ interface KeyMapProps {
 /**
  * A <Tab> component
  */
-const TTab = defineComponent({
+const TTab = defineComponent<TTabProps>({
   setup(_, { slots }) {
     return () => (h(Fragment, slots.default()))
   },
@@ -158,9 +158,7 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
 
           if (key.meta === true) {
             const tabId = key.name === '0' ? 9 : parseInt(key.name, 10) - 1
-
             onTabChange(tabId)
-            console.log('???!!!')
           }
 
           break
@@ -252,6 +250,7 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
  */
 const TTabs = defineComponent<TTabsProps>({
   name: 'TTabs',
+  inheritAttrs: false,
   props: ([
     'onChange',
     'flexDirection',

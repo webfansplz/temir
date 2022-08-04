@@ -48,7 +48,7 @@ export default defineComponent({
     </TLink>
   </TBox> -->
 
-  <TTabs :on-change="onChange">
+  <TTabs flex-direction="column" :on-change="onChange">
     <TTab name="foo">
       Foo
     </TTab>
