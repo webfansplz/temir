@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
 import * as spinners from 'cli-spinners'
 import type { SpinnerName } from 'cli-spinners'
-import { Text } from '@temir/core'
+import { TText } from '@temir/core'
 
 export interface TSpinnerProps {
   /**
@@ -34,7 +34,7 @@ const TSpinner = defineComponent<TSpinnerProps>({
       clearInterval(timer)
     })
     return () => {
-      return h(Text, {}, spinner.value.frames[frame.value])
+      return h(TText, {}, spinner.value.frames[frame.value])
     }
   },
 })

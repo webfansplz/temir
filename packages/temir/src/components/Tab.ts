@@ -3,10 +3,10 @@ import type { Component, VNode } from '@vue/runtime-core'
 import { Fragment, computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
 import type { StdinProps } from '../composables'
 import { useStdin } from '../composables'
-import type { BoxProps } from '.'
-import { Box, Text } from '.'
+import type { TBoxProps } from '.'
+import { TBox, TText } from '.'
 
-export interface TabProps {
+export interface TTabProps {
   name: string
 }
 
@@ -23,7 +23,7 @@ interface KeyMapProps {
 /**
  * A <Tab> component
  */
-const Tab = defineComponent({
+const TTab = defineComponent({
   setup(_, { slots }) {
     return () => (h(Fragment, slots.default()))
   },
@@ -32,16 +32,16 @@ const Tab = defineComponent({
 /**
  * Props for the <Tabs> component
  */
-export interface TabsProps {
+export interface TTabsProps {
   /**
    * A function called whenever a tab is changing.
    * @param {string} name the name of the tab passed in the `name` prop
-   * @param {React.Component<TabProps>} activeTab the current active tab component
+   * @param {React.Component<TTabProps>} activeTab the current active tab component
    */
-  onChange?: (name: string, activeTab: Component<typeof Tab>) => void
-  children?: Component<typeof Tab>[]
-  flexDirection?: BoxProps['flexDirection']
-  width?: BoxProps['width']
+  onChange?: (name: string, activeTab: Component<typeof TTab>) => void
+  children?: Component<typeof TTab>[]
+  flexDirection?: TBoxProps['flexDirection']
+  width?: TBoxProps['width']
   keyMap?: KeyMapProps
   isFocused?: boolean
   defaultValue?: string
@@ -56,7 +56,7 @@ interface RequiredKeyMapProps {
   next: string[]
 }
 
-interface TabsWithStdinProps extends TabsProps {
+interface TabsWithStdinProps extends TTabsProps {
   isRawModeSupported: boolean
   setRawMode: StdinProps['setRawMode']
   stdin: StdinProps['stdin']
@@ -221,17 +221,17 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
 
         const content = [
           key > 0
-          && h(Text, {
+          && h(TText, {
             color: 'gray',
           }, normalizedSeparator.value),
-          h(Box, {
+          h(TBox, {
             key: name,
             flexDirection: props.flexDirection,
           }, [
-            props.showIndex && h(Text, {
+            props.showIndex && h(TText, {
               color: 'grey',
             }, key + 1),
-            h(Text, colors, item),
+            h(TText, colors, item),
           ].filter(Boolean)),
         ].filter(Boolean)
         return content
@@ -241,7 +241,7 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
     return () => {
       const children = slots.default()
 
-      return h(Box, {
+      return h(TBox, {
         flexDirection: props.flexDirection,
         width: props.width,
       }, normalizeChild(children))
@@ -252,8 +252,8 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
 /**
  * The <Tabs> component
  */
-const Tabs = defineComponent<TabsProps>({
-  name: 'Tabs',
+const TTabs = defineComponent<TTabsProps>({
+  name: 'TTabs',
   props: ([
     'onChange',
     'flexDirection',
@@ -277,4 +277,4 @@ const Tabs = defineComponent<TabsProps>({
   },
 })
 
-export { Tabs, Tab }
+export { TTabs, TTab }

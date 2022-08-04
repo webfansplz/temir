@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, ref } from '@vue/runtime-core'
-import { Box, Text } from '@temir/core'
+import { TBox, TText } from '@temir/core'
 
 export default defineComponent({
   setup() {
@@ -12,12 +12,12 @@ export default defineComponent({
       count.value = count.value === 0 ? 1 : 0
     }, 1000)
 
-    return () => h(Box, {
+    return () => h(TBox, {
       width: 80,
       justifyContent: j.value,
       borderStyle: 'round',
       marginRight: 2,
-    }, h(Text, {
+    }, h(TText, {
       color: c.value,
     }, 'Hello World!!'))
   },

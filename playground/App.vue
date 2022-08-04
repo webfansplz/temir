@@ -1,18 +1,17 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/runtime-core'
-import { Box, Spacer, Tab, Tabs, Text, TextInput } from '@temir/core'
+import { TBox, TSpacer, TTab, TTabs, TText } from '@temir/core'
 import TSpinner from '@temir/spinner'
 
 export default defineComponent({
   components: {
-    Box,
-    // eslint-disable-next-line vue/no-reserved-component-names
-    Text,
+    TBox,
+
+    TText,
     // Newline,
-    Spacer,
-    TextInput,
-    Tabs,
-    Tab,
+    TSpacer,
+    TTabs,
+    TTab,
     TSpinner,
   },
   setup() {
@@ -40,11 +39,11 @@ export default defineComponent({
 </script>
 
 <template>
-  <Box :margin-right="1">
-    <Text>
+  <TBox :margin-right="1">
+    <TText>
       Hello World.!
-    </Text>
-  </Box>
+    </TText>
+  </TBox>
 
   <!-- <Tabs :on-change="onChange">
     <Tab name="foo">
@@ -58,17 +57,17 @@ export default defineComponent({
     </Tab>
   </Tabs> -->
 
-  <!-- <Box
+  <!-- <TBox
     flex-direction="column"
     :height="20"
     border-style="round"
     :width="50"
     :margin="1"
   >
-    <Text color="yellow">
+    <TText color="yellow">
       Top
-    </Text>
-    <Spacer />
-    <Text>Bottom</Text>
-  </Box> -->
+    </TText>
+    <TSpacer />
+    <TText>Bottom</TText>
+  </TBox> -->
 </template>

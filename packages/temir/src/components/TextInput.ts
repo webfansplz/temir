@@ -1,9 +1,9 @@
 import chalk from 'chalk'
 import { defineComponent, h, ref, watchEffect } from 'vue'
 import { useInput } from '../composables'
-import { Text } from './'
+import { TText } from './'
 
-export interface TextInputProps {
+export interface TTextInputProps {
   /**
    * Text to display when `value` is empty.
    */
@@ -46,7 +46,7 @@ export interface TextInputProps {
   onSubmit?: (value: string) => void
 }
 
-export const TextInput = defineComponent<TextInputProps>({
+export const TTextInput = defineComponent<TTextInputProps>({
   name: 'TextInput',
   props: ([
     'value',
@@ -175,7 +175,7 @@ export const TextInput = defineComponent<TextInputProps>({
           ? renderedValue
           : renderedPlaceholder
         : renderedValue
-      return h(Text, null, content)
+      return h(TText, null, content)
     }
   },
 })

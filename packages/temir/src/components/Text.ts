@@ -4,7 +4,7 @@ import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
 import colorize from '../dom/colorize'
 import type { Styles } from '../dom/styles'
 
-export interface TextProps {
+export interface TTextProps {
   /**
    * Change text color. Temir uses chalk under the hood, so all its functionality is supported.
    */
@@ -57,9 +57,9 @@ export interface TextProps {
 /**
  * This component can display text, and change its style to make it colorful, bold, underline, italic or strikethrough.
  */
-export const Text = defineComponent<TextProps>({
+export const TText = defineComponent<TTextProps>({
   // eslint-disable-next-line vue/no-reserved-component-names
-  name: 'Text',
+  name: 'TText',
   inheritAttrs: false,
   props: ([
     'color',
@@ -112,7 +112,7 @@ export const Text = defineComponent<TextProps>({
       return h('temir-text', {
         style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap', ...props },
         _temir_text: children,
-        isInsideText: instance.parent.type.name !== 'Box',
+        isInsideText: instance.parent.type.name !== 'TBox',
         internal_transform: transform,
       }, children)
     }

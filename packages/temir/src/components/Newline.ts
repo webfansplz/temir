@@ -1,6 +1,6 @@
 import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
 
-export interface NewlineProps {
+export interface TNewlineProps {
   /**
    * Number of newlines to insert.
    *
@@ -10,10 +10,10 @@ export interface NewlineProps {
 }
 
 /**
- * Adds one or more newline (\n) characters. Must be used within <Text> components.
+ * Adds one or more newline (\n) characters. Must be used within <TText> components.
  */
-export const Newline = defineComponent<NewlineProps>({
-  name: 'Newline',
+export const TNewline = defineComponent<TNewlineProps>({
+  name: 'TNewline',
   props: ([
     'count',
   ] as undefined),
@@ -24,7 +24,7 @@ export const Newline = defineComponent<NewlineProps>({
       const count = props.count ?? 1
       return h('temir-text', {
         _temir_text: children,
-        isInsideText: instance.parent.type.name !== 'Box',
+        isInsideText: instance.parent.type.name !== 'TBox',
       }, '\n'.repeat(count))
     }
   },

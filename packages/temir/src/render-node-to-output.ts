@@ -8,7 +8,7 @@ import renderBorder from './dom/render-border'
 import type { DOMElement } from './dom'
 import type Output from './output'
 
-// If parent container is `<Box>`, text nodes will be treated as separate nodes in
+// If parent container is `<TBox>`, text nodes will be treated as separate nodes in
 // the tree and will have their own coordinates in the layout.
 // To ensure text nodes are aligned correctly, take X and Y of the first text node
 // and use it as offset for the rest of the nodes

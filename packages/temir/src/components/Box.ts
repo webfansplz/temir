@@ -2,7 +2,7 @@ import { defineComponent, h } from '@vue/runtime-core'
 import { identity, pickBy } from 'lodash'
 import type { Styles } from '../dom/styles'
 
-export interface BoxProps extends Omit<Styles, 'textWrap'> {
+export interface TBoxProps extends Omit<Styles, 'textWrap'> {
   /**
    * Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
    *
@@ -47,11 +47,11 @@ export interface BoxProps extends Omit<Styles, 'textWrap'> {
 }
 
 /**
- * `<Box>` is an essential Temir component to build your layout. It's like `<div style="display: flex">` in the browser.
+ * `<TBox>` is an essential Temir component to build your layout. It's like `<div style="display: flex">` in the browser.
  */
 
-export const Box = defineComponent<BoxProps>({
-  name: 'Box',
+export const TBox = defineComponent<TBoxProps>({
+  name: 'TBox',
   props: ([
     'textWrap',
     'position',
