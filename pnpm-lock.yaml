@@ -62,7 +62,6 @@ importers:
       signal-exit: ^3.0.7
       slice-ansi: ^4.0.0
       string-width: 4.2.3
-      terminal-link: ^2.1.1
       tsup: ^6.2.1
       vue: ^3.2.37
       widest-line: 3.1.0
@@ -85,7 +84,6 @@ importers:
       signal-exit: 3.0.7
       slice-ansi: 4.0.0
       string-width: 4.2.3
-      terminal-link: 2.1.1
       vue: 3.2.37
       widest-line: 3.1.0
       wrap-ansi: 7.0.0
@@ -94,6 +92,21 @@ importers:
       '@types/is-ci': 3.0.0
       '@types/lodash': 4.14.182
       '@types/signal-exit': 3.0.1
+      tsup: 6.2.1_typescript@4.7.4
+
+  packages/temir-link:
+    specifiers:
+      '@temir/core': workspace:*
+      '@types/terminal-link': ^1.2.0
+      '@vue/runtime-core': ^3.2.37
+      terminal-link: ^2.1.1
+      tsup: ^6.2.1
+    dependencies:
+      '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
+      terminal-link: 2.1.1
+    devDependencies:
+      '@types/terminal-link': 1.2.0
       tsup: 6.2.1_typescript@4.7.4
 
   packages/temir-spinner:
@@ -113,6 +126,7 @@ importers:
     specifiers:
       '@temir/cli': workspace:*
       '@temir/core': workspace:*
+      '@temir/link': workspace:*
       '@temir/spinner': workspace:*
       '@vitejs/plugin-vue': ^3.0.1
       '@vue/runtime-core': ^3.2.37
@@ -124,6 +138,7 @@ importers:
     devDependencies:
       '@temir/cli': link:../packages/cli
       '@temir/core': link:../packages/temir
+      '@temir/link': link:../packages/temir-link
       '@temir/spinner': link:../packages/temir-spinner
       '@vitejs/plugin-vue': 3.0.1_vite@2.9.14+vue@3.2.37
       '@vue/runtime-core': 3.2.37
@@ -743,6 +758,13 @@ packages:
     resolution: {integrity: sha512-OSitN9PP9E/c4tlt1Qdj3CAz5uHD9Da5rhUqlaKyQRCX1T7Zdpbk6YdeZbR2eiE2ce+NMBgVnMxGqpaPSNQDUQ==}
     dev: true
 
+  /@types/terminal-link/1.2.0:
+    resolution: {integrity: sha512-NT8m0TFW+Cmamv8hnY+2n/qJMveAQWyO4P3cUHLXg+03FvSeIVOZlxXTN7P3prreb0PkrZSZCDYuSCWYu1fFQA==}
+    deprecated: This is a stub types definition. terminal-link provides its own type definitions, so you do not need this installed.
+    dependencies:
+      terminal-link: 2.1.1
+    dev: true
+
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
@@ -1034,7 +1056,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.21.3
-    dev: false
 
   /ansi-regex/5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -3477,7 +3498,6 @@ packages:
     dependencies:
       has-flag: 4.0.0
       supports-color: 7.2.0
-    dev: false
 
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
@@ -3493,7 +3513,6 @@ packages:
     dependencies:
       ansi-escapes: 4.3.2
       supports-hyperlinks: 2.2.0
-    dev: false
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
@@ -3616,7 +3635,6 @@ packages:
   /type-fest/0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
-    dev: false
 
   /type-fest/0.6.0:
     resolution: {integrity: sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg==}

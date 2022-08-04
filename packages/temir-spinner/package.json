@@ -2,7 +2,7 @@
   "name": "@temir/spinner",
   "type": "module",
   "version": "0.0.1-alpha.1",
-  "description": "Spinner component for Ink",
+  "description": "Spinner component for Temir",
   "author": "webfansplz",
   "license": "MIT",
   "homepage": "https://github.com/webfansplz/temir#readme",

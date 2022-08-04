@@ -14,6 +14,7 @@
   "devDependencies": {
     "@temir/cli": "workspace:*",
     "@temir/core": "workspace:*",
+    "@temir/link": "workspace:*",
     "@temir/spinner": "workspace:*",
     "@vitejs/plugin-vue": "^3.0.1",
     "@vue/runtime-core": "^3.2.37",

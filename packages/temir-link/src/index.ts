@@ -1,6 +1,5 @@
-import { defineComponent, h } from '@vue/runtime-core'
+import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
 import terminalLink from 'terminal-link'
-import { TText } from './'
 
 export interface TLinkProps {
   url: string
@@ -10,16 +9,19 @@ export interface TLinkProps {
 /**
  * Link.
  */
-export const TLink = defineComponent<TLinkProps>({
+const TLink = defineComponent<TLinkProps>({
   name: 'TLink',
   props: ([
     'url',
     'fallback',
   ] as undefined),
   setup(props, { slots }) {
+    const instance = getCurrentInstance()
     return () => {
       const children = slots.default()
-      return h(TText, {
+      return h('temir-text', {
+        _temir_text: children,
+        isInsideText: instance.parent.type.name !== 'TBox',
         internal_transform: (text: string) => {
           return terminalLink(text, props.url, { fallback: props.fallback ?? true })
         },
@@ -28,3 +30,4 @@ export const TLink = defineComponent<TLinkProps>({
   },
 })
 
+export default TLink

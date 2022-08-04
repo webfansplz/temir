@@ -2,17 +2,14 @@
 import { computed, defineComponent, ref } from '@vue/runtime-core'
 import { TBox, TSpacer, TTab, TTabs, TText } from '@temir/core'
 import TSpinner from '@temir/spinner'
+import TLink from '@temir/link'
 
 export default defineComponent({
   components: {
     TBox,
 
     TText,
-    // Newline,
-    TSpacer,
-    TTabs,
-    TTab,
-    TSpinner,
+    TLink,
   },
   setup() {
     const count = ref(0)
@@ -40,9 +37,11 @@ export default defineComponent({
 
 <template>
   <TBox :margin-right="1">
-    <TText>
-      Hello World.!
-    </TText>
+    <TLink url="https://www.baidu.com">
+      <TText color="cyan">
+        Website
+      </TText>
+    </TLink>
   </TBox>
 
   <!-- <Tabs :on-change="onChange">

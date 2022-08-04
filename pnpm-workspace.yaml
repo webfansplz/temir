@@ -2,4 +2,5 @@ packages:
   - packages/cli
   - packages/temir
   - packages/temir-spinner
+  - packages/temir-link
   - playground
