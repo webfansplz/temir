@@ -1,6 +1,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/runtime-core'
-import { Box, Spacer, Spinner, Tab, Tabs, Text, TextInput } from '@temir/core'
+import { Box, Spacer, Tab, Tabs, Text, TextInput } from '@temir/core'
+import TSpinner from '@temir/spinner'
 
 export default defineComponent({
   components: {
@@ -12,6 +13,7 @@ export default defineComponent({
     TextInput,
     Tabs,
     Tab,
+    TSpinner,
   },
   setup() {
     const count = ref(0)
@@ -39,7 +41,9 @@ export default defineComponent({
 
 <template>
   <Box :margin-right="1">
-    <Text>Enter your query:</Text>
+    <Text>
+      Hello World.!
+    </Text>
   </Box>
 
   <!-- <Tabs :on-change="onChange">

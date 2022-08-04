@@ -52,7 +52,6 @@ importers:
       chalk: ^4.1.2
       cli-boxes: ^2.2.1
       cli-cursor: ^3.1.0
-      cli-spinners: ^2.7.0
       cli-truncate: ^2.1.0
       indent-string: ^4.0.0
       is-ci: ^3.0.1
@@ -76,7 +75,6 @@ importers:
       chalk: 4.1.2
       cli-boxes: 2.2.1
       cli-cursor: 3.1.0
-      cli-spinners: 2.7.0
       cli-truncate: 2.1.0
       indent-string: 4.0.0
       is-ci: 3.0.1
@@ -98,10 +96,24 @@ importers:
       '@types/signal-exit': 3.0.1
       tsup: 6.2.1_typescript@4.7.4
 
+  packages/temir-spinner:
+    specifiers:
+      '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
+      cli-spinners: ^2.7.0
+      tsup: ^6.2.1
+    dependencies:
+      '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
+      cli-spinners: 2.7.0
+    devDependencies:
+      tsup: 6.2.1_typescript@4.7.4
+
   playground:
     specifiers:
       '@temir/cli': workspace:*
       '@temir/core': workspace:*
+      '@temir/spinner': workspace:*
       '@vitejs/plugin-vue': ^3.0.1
       '@vue/runtime-core': ^3.2.37
       esno: ^0.16.3
@@ -112,6 +124,7 @@ importers:
     devDependencies:
       '@temir/cli': link:../packages/cli
       '@temir/core': link:../packages/temir
+      '@temir/spinner': link:../packages/temir-spinner
       '@vitejs/plugin-vue': 3.0.1_vite@2.9.14+vue@3.2.37
       '@vue/runtime-core': 3.2.37
       esno: 0.16.3
