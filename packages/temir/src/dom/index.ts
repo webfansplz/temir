@@ -225,7 +225,6 @@ export const updateProps = (node, key, value) => {
 export const createElement = (nodeName: string, _, __, props): DOMElement => {
   const type = nodeName === 'temir-text' && props.isInsideText ? 'temir-virtual-text' : nodeName
   const node = createNode(type)
-
   for (const key in props)
     updateProps(node, key, props[key])
 

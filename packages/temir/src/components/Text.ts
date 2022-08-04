@@ -58,7 +58,7 @@ export interface TTextProps {
  * This component can display text, and change its style to make it colorful, bold, underline, italic or strikethrough.
  */
 export const TText = defineComponent<TTextProps>({
-  // eslint-disable-next-line vue/no-reserved-component-names
+
   name: 'TText',
   inheritAttrs: false,
   props: ([
@@ -112,7 +112,7 @@ export const TText = defineComponent<TTextProps>({
       return h('temir-text', {
         style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap', ...props },
         _temir_text: children,
-        isInsideText: instance.parent.type.name !== 'TBox',
+        isInsideText: !['TBox', 'TApp'].includes(instance.parent.type.name),
         internal_transform: transform,
       }, children)
     }

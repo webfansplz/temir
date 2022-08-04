@@ -25,6 +25,7 @@ interface Focusable {
 }
 
 export const App = defineComponent<AppProps>({
+  name: 'TApp',
   props: (['instance', 'children', 'stdin', 'stdout', 'stderr', 'writeToStdout', 'writeToStderr', 'exitOnCtrlC', 'onExit'] as undefined),
   setup(props) {
     // Count how many components enabled raw mode to avoid disabling

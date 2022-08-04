@@ -24,7 +24,7 @@ export const TNewline = defineComponent<TNewlineProps>({
       const count = props.count ?? 1
       return h('temir-text', {
         _temir_text: children,
-        isInsideText: instance.parent.type.name !== 'TBox',
+        isInsideText: !['TBox', 'TApp'].includes(instance.parent.type.name),
       }, '\n'.repeat(count))
     }
   },

@@ -30,17 +30,21 @@
     "node": ">=14"
   },
   "scripts": {
+    "test": "vitest",
     "dev": "pnpm --filter ./packages run dev --parallel",
     "build": "pnpm --filter ./packages run build --parallel",
     "build-temir": "pnpm --filter ./packages/temir run build --parallel"
-
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
     "@types/node": "*",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/runtime-core": "^3.2.37",
     "eslint": "^8.20.0",
+    "sinon": "^14.0.0",
     "tsup": "^6.2.1",
     "typescript": "^4.7.4",
-    "unbuild": "^0.7.6"
+    "unbuild": "^0.7.6",
+    "vitest": "^0.20.3"
   }
 }
