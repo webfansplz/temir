@@ -58,6 +58,6 @@ export async function runDevServer(file = 'main.ts') {
   await runner.executeId(`/${file}`)
 
   server.watcher.on('change', async () => {
-    reload(runner, [file])
+    reload(runner, [`/${file}`])
   })
 }
