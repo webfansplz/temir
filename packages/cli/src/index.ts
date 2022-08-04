@@ -6,16 +6,18 @@ import { buildBundle } from './build'
 const cli = cac('temir')
 
 cli
-  .version(version)
-  .help()
-
-cli
-  .command('file')
+  .command('[file]')
   .action(runDevServer)
 
 cli
   .command('build [file]')
+  .option('-m, --minify', 'Minify the output')
+  .option('-a, --all', 'Build all the deps into bundles')
   .action(buildBundle)
+
+cli
+  .version(version)
+  .help()
 
 cli.parse()
 

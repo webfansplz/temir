@@ -1,6 +1,6 @@
 import originalIsCI from 'is-ci'
-import type { DebouncedFunc } from 'lodash-es'
-import { throttle } from 'lodash-es'
+import type { DebouncedFunc } from 'lodash'
+import { throttle } from 'lodash'
 import type { Component, App as VueAppInstance } from '@vue/runtime-core'
 import { defineComponent, h } from '@vue/runtime-core'
 import signalExit from 'signal-exit'

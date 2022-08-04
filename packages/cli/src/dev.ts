@@ -4,7 +4,6 @@ import vuePlugin from '@vitejs/plugin-vue'
 import viteJsxPlugin from '@vitejs/plugin-vue-jsx'
 import { ViteNodeServer } from 'vite-node/server'
 import { ViteNodeRunner } from 'vite-node/client'
-// import { createHotContext } from './hmr'
 
 function reload(runner: ViteNodeRunner, files: string[]) {
   // invalidate module cache but not node_modules
@@ -47,7 +46,6 @@ export async function runDevServer(file = 'main.ts') {
               prune: () => { },
             }
           }
-          // return createHotContext(runner, file, url)
         },
         updateStyle() { },
       },
@@ -60,14 +58,6 @@ export async function runDevServer(file = 'main.ts') {
   await runner.executeId(`/${file}`)
 
   server.watcher.on('change', async () => {
-    // const maps = getCache(runner)
-    // const hotModulesMap = maps.hotModulesMap.get(filePath)
-    // if (hotModulesMap) {
-    //   const p = await runner.directRequest(hotModulesMap.id, filePath, [])
-    //   console.log(hotModulesMap.callbacks)
-    //   hotModulesMap.callbacks.forEach(hotModule => hotModule.fn([p]))
-    // }
     reload(runner, [file])
-    // await runner.executeId(`/${file}`)
   })
 }

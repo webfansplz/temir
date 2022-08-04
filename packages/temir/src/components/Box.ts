@@ -1,5 +1,5 @@
 import { defineComponent, h } from '@vue/runtime-core'
-import { identity, pickBy } from 'lodash-es'
+import { identity, pickBy } from 'lodash'
 import type { Styles } from '../dom/styles'
 
 export interface BoxProps extends Omit<Styles, 'textWrap'> {
