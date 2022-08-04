@@ -1,6 +1,7 @@
 import type { Component } from '@vue/runtime-core'
 import { defineComponent, h, onMounted, onUnmounted, provide, ref } from '@vue/runtime-core'
 import cliCursor from 'cli-cursor'
+import type Temir from '../temir'
 
 const TAB = '\t'
 const SHIFT_TAB = '\u001B[Z'
@@ -8,6 +9,7 @@ const ESC = '\u001B'
 
 export interface AppProps {
   children: Component
+  instance: InstanceType<typeof Temir>
   stdin: NodeJS.ReadStream
   stdout: NodeJS.WriteStream
   stderr: NodeJS.WriteStream
@@ -23,7 +25,7 @@ interface Focusable {
 }
 
 export const App = defineComponent<AppProps>({
-  props: (['children', 'stdin', 'stdout', 'stderr', 'writeToStdout', 'writeToStderr', 'exitOnCtrlC', 'onExit'] as undefined),
+  props: (['instance', 'children', 'stdin', 'stdout', 'stderr', 'writeToStdout', 'writeToStderr', 'exitOnCtrlC', 'onExit'] as undefined),
   setup(props) {
     // Count how many components enabled raw mode to avoid disabling
     // raw mode until all components don't need it anymore
@@ -33,8 +35,8 @@ export const App = defineComponent<AppProps>({
     const focusables = ref<Focusable[]>()
     const isFocusEnabled = ref<boolean>()
 
+    provide('instance', props.instance)
     provide('exit', handleExit)
-
     provide('stdin', props.stdin)
     provide('setRawMode', handleSetRawMode)
     provide('isRawModeSupported', isRawModeSupported())

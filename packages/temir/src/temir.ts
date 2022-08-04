@@ -145,6 +145,7 @@ export default class Temir {
           writeToStdout: context.writeToStdout,
           writeToStderr: context.writeToStderr,
           exitOnCtrlC: options.exitOnCtrlC,
+          instance: context,
           onExit: context.unmount,
           children: node,
         })
@@ -156,7 +157,7 @@ export default class Temir {
     this.vueApp.mount(this.rootNode)
   }
 
-  render(node) {
+  render(node: Component) {
     this.rootNode = dom.createNode('temir-root')
     this.rootNode.onRender = this.onRender
     this.vueApp?.unmount()
