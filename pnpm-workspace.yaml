@@ -3,4 +3,5 @@ packages:
   - packages/temir
   - packages/temir-spinner
   - packages/temir-link
+  - packages/temir-tab
   - playground

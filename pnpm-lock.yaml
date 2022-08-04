@@ -122,12 +122,26 @@ importers:
     devDependencies:
       tsup: 6.2.1_typescript@4.7.4
 
+  packages/temir-tab:
+    specifiers:
+      '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
+      readline: ^1.3.0
+      tsup: ^6.2.1
+    dependencies:
+      '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
+      readline: 1.3.0
+    devDependencies:
+      tsup: 6.2.1_typescript@4.7.4
+
   playground:
     specifiers:
       '@temir/cli': workspace:*
       '@temir/core': workspace:*
       '@temir/link': workspace:*
       '@temir/spinner': workspace:*
+      '@temir/tab': workspace:*
       '@vitejs/plugin-vue': ^3.0.1
       '@vue/runtime-core': ^3.2.37
       esno: ^0.16.3
@@ -140,6 +154,7 @@ importers:
       '@temir/core': link:../packages/temir
       '@temir/link': link:../packages/temir-link
       '@temir/spinner': link:../packages/temir-spinner
+      '@temir/tab': link:../packages/temir-tab
       '@vitejs/plugin-vue': 3.0.1_vite@2.9.14+vue@3.2.37
       '@vue/runtime-core': 3.2.37
       esno: 0.16.3

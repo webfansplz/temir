@@ -1,10 +1,8 @@
 import readline from 'readline'
 import type { Component, VNode } from '@vue/runtime-core'
 import { Fragment, computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
-import type { StdinProps } from '../composables'
-import { useStdin } from '../composables'
-import type { TBoxProps } from '.'
-import { TBox, TText } from '.'
+import type { StdinProps, TBoxProps } from '@temir/core'
+import { TBox, TText, useStdin } from '@temir/core'
 
 export interface TTabProps {
   name: string

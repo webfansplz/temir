@@ -1,8 +1,9 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/runtime-core'
-import { TBox, TSpacer, TTab, TTabs, TText } from '@temir/core'
+import { TBox, TSpacer, TText } from '@temir/core'
 import TSpinner from '@temir/spinner'
 import TLink from '@temir/link'
+import { TTab, TTabs } from '@temir/tab'
 
 export default defineComponent({
   components: {
@@ -10,6 +11,9 @@ export default defineComponent({
 
     TText,
     TLink,
+    TTabs,
+    TTab,
+
   },
   setup() {
     const count = ref(0)
@@ -36,25 +40,25 @@ export default defineComponent({
 </script>
 
 <template>
-  <TBox :margin-right="1">
+  <!-- <TBox :margin-right="1">
     <TLink url="https://www.baidu.com">
       <TText color="cyan">
         Website
       </TText>
     </TLink>
-  </TBox>
+  </TBox> -->
 
-  <!-- <Tabs :on-change="onChange">
-    <Tab name="foo">
+  <TTabs :on-change="onChange">
+    <TTab name="foo">
       Foo
-    </Tab>
-    <Tab name="bar">
+    </TTab>
+    <TTab name="bar">
       Bar
-    </Tab>
-    <Tab name="baz">
+    </TTab>
+    <TTab name="baz">
       Baz
-    </Tab>
-  </Tabs> -->
+    </TTab>
+  </TTabs>
 
   <!-- <TBox
     flex-direction="column"
