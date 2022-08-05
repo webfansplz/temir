@@ -160,7 +160,7 @@ export default class Temir {
   render(node: Component) {
     this.rootNode = dom.createNode('temir-root')
     this.rootNode.onRender = this.onRender
-    this.vueApp?.unmount()
+    // this.vueApp?.unmount()
     this.createVueApp(node)
     this.onRender()
   }

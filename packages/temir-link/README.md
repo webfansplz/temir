@@ -1,6 +1,6 @@
 # temir-link
 
-> > Link component for Temir. 
+> Link component for Temir. 
 
 ## Install
 
@@ -10,8 +10,42 @@ $ npm install @temir/link
 
 ## usage
 
+![temir-link](./media/temir-link.png)
+
 ```vue
-``
+<script lang="ts">
+import { defineComponent } from '@vue/runtime-core'
+import { TBox, TText } from '@temir/core'
+import TLink from '@temir/link'
+
+export default defineComponent({
+  components: {
+    TBox,
+    TText,
+    TLink,
+  },
+})
+</script>
+
+<template>
+  <TBox
+    :margin="5"
+    width="20"
+    border-style="round"
+    justify-content="center"
+  >
+    <TLink url="https://github.com">
+      <TText color="yellow">
+        Hi
+      </TText>
+      <TText color="cyan">
+        Github
+      </TText>
+    </TLink>
+  </TBox>
+</template>
+
+```
 
 ## API
 
@@ -37,3 +71,5 @@ Determines whether the URL should be printed in parens after the text for unsupp
 ## Related
 
 - [terminal-link](https://github.com/sindresorhus/terminal-link) - Create clickable links in the terminal
+
+- [ink-link](https://github.com/sindresorhus/ink-link) - Link component for Ink
