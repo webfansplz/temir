@@ -217,26 +217,34 @@ If `wrap` is passed (by default), Temir will wrap text and split it into multipl
 If `truncate-*` is passed, Temir will truncate text instead, which will result in one line of text with the rest cut off.
 
 ```vue
-<TBox :width="7">
-	<TText>Hello World</TText>
-</TBox>
-//=> 'Hello\nWorld'
+<template>
+  <TBox :width="7">
+    <TText>Hello World</TText>
+  </TBox>
+  //=> 'Hello\nWorld'
 
-// `truncate` is an alias to `truncate-end`
-<TBox :width="7">
-	<TText wrap="truncate">Hello World</TText>
-</TBox>
-//=> 'Hello…'
+  // `truncate` is an alias to `truncate-end`
+  <TBox :width="7">
+    <TText wrap="truncate">
+      Hello World
+    </TText>
+  </TBox>
+  //=> 'Hello…'
 
-<TBox :width="7">
-	<TText wrap="truncate-middle">Hello World</TText>
-</TBox>
-//=> 'He…ld'
+  <TBox :width="7">
+    <TText wrap="truncate-middle">
+      Hello World
+    </TText>
+  </TBox>
+  //=> 'He…ld'
 
-<TBox :width="7">
-	<TText wrap="truncate-start">Hello World</TText>
-</TBox>
-//=> '…World'
+  <TBox :width="7">
+    <TText wrap="truncate-start">
+      Hello World
+    </TText>
+  </TBox>
+  //=> '…World'
+</template>
 ```
 
 ### `<Box>`
@@ -266,25 +274,29 @@ Width of the element in spaces.
 You can also set it in percent, which will calculate the width based on the width of parent element.
 
 ```vue
-<TBox :width="4">
-	<TText>X</TText>
-</TBox>
+<template>
+  <TBox :width="4">
+    <TText>X</TText>
+  </TBox>
 
-//=> 'X   '
+  //=> 'X   '
+</template>
 ```
 
 ```vue
-<TBox :width="10">
-	<TBox width="50%">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox :width="10">
+    <TBox width="50%">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-    Y
-  </TText>
-</TBox>
+    <TText>
+      Y
+    </TText>
+  </TBox>
 
-//=> 'X    Y'
+  //=> 'X    Y'
+</template>
 ```
 
 ##### height
@@ -295,23 +307,27 @@ Height of the element in lines (rows).
 You can also set it in percent, which will calculate the height based on the height of parent element.
 
 ```vue
-<TBox :height="4">
-	<TText>X</TText>
-</TBox>
-//=> 'X\n\n\n'
+<template>
+  <TBox :height="4">
+    <TText>X</TText>
+  </TBox>
+  //=> 'X\n\n\n'
+</template>
 ```
 
 ```vue
-<TBox :height="6" flexDirection="column">
-	<TBox height="50%">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox :height="6" flex-direction="column">
+    <TBox height="50%">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-    Y
-  </TText>
-</TBox>
-//=> 'X\n\n\nY\n\n'
+    <TText>
+      Y
+    </TText>
+  </TBox>
+  //=> 'X\n\n\nY\n\n'
+</template>
 ```
 
 ##### minWidth
@@ -380,6 +396,7 @@ Default: `0`
 Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `paddingLeft` and `paddingRight`.
 
 ```vue
+<template>
   <TBox :padding-top="2">
     <TText>Top</TText>
   </TBox>
@@ -407,6 +424,8 @@ Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `padd
   <TBox :padding="2">
     <TText>Top, bottom, left and right</TText>
   </TBox>
+</template>
+
 ```
 
 #### Margin
@@ -461,33 +480,35 @@ Default: `0`
 Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
 
 ```vue
-<TBox :margin-top="2">
-  <TText>Top</TText>
-</TBox>
+<template>
+  <TBox :margin-top="2">
+    <TText>Top</TText>
+  </TBox>
 
-<TBox :margin-bottom="2">
-  <TText>Bottom</TText>
-</TBox>
+  <TBox :margin-bottom="2">
+    <TText>Bottom</TText>
+  </TBox>
 
-<TBox :margin-left="2">
-  <TText>Left</TText>
-</TBox>
+  <TBox :margin-left="2">
+    <TText>Left</TText>
+  </TBox>
 
-<TBox :margin-right="2">
-  <TText>Right</TText>
-</TBox>
+  <TBox :margin-right="2">
+    <TText>Right</TText>
+  </TBox>
 
-<TBox :margin-x="2">
-  <TText>Left and right</TText>
-</TBox>
+  <TBox :margin-x="2">
+    <TText>Left and right</TText>
+  </TBox>
 
-<TBox :margin-y="2">
-  <TText>Top and bottom</TText>
-</TBox>
+  <TBox :margin-y="2">
+    <TText>Top and bottom</TText>
+  </TBox>
 
-<TBox :margin="2">
-  <TText>Top, bottom, left and right</TText>
-</TBox>
+  <TBox :margin="2">
+    <TText>Top, bottom, left and right</TText>
+  </TBox>
+</template>
 ```
 
 #### Flex
@@ -500,12 +521,14 @@ Default: `0`
 See [flex-grow](https://css-tricks.com/almanac/properties/f/flex-grow/).
 
 ```vue
-<TBox>
-	<TText>Label:</TText>
-	<TBox :flexGrow="1">
-		<TText>Fills all remaining space</TText>
-	</TBox>
-</TBox>
+<template>
+  <TBox>
+    <TText>Label:</TText>
+    <TBox :flex-grow="1">
+      <TText>Fills all remaining space</TText>
+    </TBox>
+  </TBox>
+</template>
 ```
 
 ##### flexShrink
@@ -516,15 +539,17 @@ Default: `1`
 See [flex-shrink](https://css-tricks.com/almanac/properties/f/flex-shrink/).
 
 ```vue
-<TBox :width="20">
-	<TBox :flexShrink="2" :width="10">
-		<TText>Will be 1/4</TText>
-	</TBox>
+<template>
+  <TBox :width="20">
+    <TBox :flex-shrink="2" :width="10">
+      <TText>Will be 1/4</TText>
+    </TBox>
 
-	<TBox :width="10">
-		<TText>Will be 3/4</TText>
-	</TBox>
-</TBox>
+    <TBox :width="10">
+      <TText>Will be 3/4</TText>
+    </TBox>
+  </TBox>
+</template>
 ```
 
 ##### flexBasis
@@ -534,29 +559,33 @@ Type: `number` `string`
 See [flex-basis](https://css-tricks.com/almanac/properties/f/flex-basis/).
 
 ```vue
-<TBox :width="6">
-	<TBox :flexBasis="3">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox :width="6">
+    <TBox :flex-basis="3">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-    Y
-  </TText>
-</TBox>
-//=> 'X  Y'
+    <TText>
+      Y
+    </TText>
+  </TBox>
+  //=> 'X  Y'
+</template>
 ```
 
 ```vue
-<TBox :width="6">
-	<TBox flexBasis="50%">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox :width="6">
+    <TBox flex-basis="50%">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-    Y
-  </TText>
-</TBox>
-//=> 'X  Y'
+    <TText>
+      Y
+    </TText>
+  </TBox>
+  //=> 'X  Y'
+</template>
 ```
 
 ##### flexDirection
@@ -567,38 +596,40 @@ Allowed values: `row` `row-reverse` `column` `column-reverse`
 See [flex-direction](https://css-tricks.com/almanac/properties/f/flex-direction/).
 
 ```vue
-<TBox>
-	<TBox :marginRight="1">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox>
+    <TBox :margin-right="1">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-    Y
-  </TText>
-</TBox>
-// X Y
+    <TText>
+      Y
+    </TText>
+  </TBox>
+  // X Y
 
-<TBox flexDirection="row-reverse">
-	<TText>X</TText>
-	<TBox :marginRight="1">
-		<TText>Y</TText>
-	</TBox>
-</TBox>
-// Y X
+  <TBox flex-direction="row-reverse">
+    <TText>X</TText>
+    <TBox :margin-right="1">
+      <TText>Y</TText>
+    </TBox>
+  </TBox>
+  // Y X
 
-<TBox flexDirection="column">
-	<TText>X</TText>
-	<TText>Y</TText>
-</TBox>
-// X
-// Y
+  <TBox flex-direction="column">
+    <TText>X</TText>
+    <TText>Y</TText>
+  </TBox>
+  // X
+  // Y
 
-<TBox flexDirection="column-reverse">
-	<TText>X</TText>
-	<TText>Y</TText>
-</TBox>
-// Y
-// X
+  <TBox flex-direction="column-reverse">
+    <TText>X</TText>
+    <TText>Y</TText>
+  </TBox>
+  // Y
+  // X
+</template>
 ```
 
 ##### alignItems
@@ -609,56 +640,58 @@ Allowed values: `flex-start` `center` `flex-end`
 See [align-items](https://css-tricks.com/almanac/properties/a/align-items/).
 
 ```vue
-<TBox alignItems="flex-start">
-	<TBox :marginRight="1">
-		<TText>X</TText>
-	</TBox>
+<template>
+  <TBox align-items="flex-start">
+    <TBox :margin-right="1">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-		A
-		<TNewline/>
-		B
-		<TNewline/>
-		C
-	</TText>
-</TBox>
-// X A
-//   B
-//   C
+    <TText>
+      A
+      <TNewline />
+      B
+      <TNewline />
+      C
+    </TText>
+  </TBox>
+  // X A
+  //   B
+  //   C
 
-<TBox alignItems="center">
-	<TBox marginRight="1">
-		<TText>X</TText>
-	</TBox>
+  <TBox align-items="center">
+    <TBox margin-right="1">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-		A
-		<TNewline/>
-		B
-		<TNewline/>
-		C
-	</TText>
-</TBox>
-//   A
-// X B
-//   C
+    <TText>
+      A
+      <TNewline />
+      B
+      <TNewline />
+      C
+    </TText>
+  </TBox>
+  //   A
+  // X B
+  //   C
 
-<TBox alignItems="flex-end">
-	<TBox marginRight="1">
-		<TText>X</TText>
-	</TBox>
+  <TBox align-items="flex-end">
+    <TBox margin-right="1">
+      <TText>X</TText>
+    </TBox>
 
-	<TText>
-		A
-		<TNewline/>
-		B
-		<TNewline/>
-		C
-	</TText>
-</TBox>
-//   A
-//   B
-// X C
+    <TText>
+      A
+      <TNewline />
+      B
+      <TNewline />
+      C
+    </TText>
+  </TBox>
+  //   A
+  //   B
+  // X C
+</template>
 ```
 
 ##### alignSelf
@@ -670,32 +703,34 @@ Allowed values: `auto` `flex-start` `center` `flex-end`
 See [align-self](https://css-tricks.com/almanac/properties/a/align-self/).
 
 ```vue
-<TBox :height="3">
-	<TBox alignSelf="flex-start">
-		<TText>X</TText>
-	</TBox>
-</TBox>
-// X
-//
-//
+<template>
+  <TBox :height="3">
+    <TBox align-self="flex-start">
+      <TText>X</TText>
+    </TBox>
+  </TBox>
+  // X
+  //
+  //
 
-<TBox :height="3">
-	<TBox alignSelf="center">
-		<TText>X</TText>
-	</TBox>
-</TBox>
-//
-// X
-//
+  <TBox :height="3">
+    <TBox align-self="center">
+      <TText>X</TText>
+    </TBox>
+  </TBox>
+  //
+  // X
+  //
 
-<TBox :height="3">
-	<TBox alignSelf="flex-end">
-		<TText>X</TText>
-	</TBox>
-</TBox>
-//
-//
-// X
+  <TBox :height="3">
+    <TBox align-self="flex-end">
+      <TText>X</TText>
+    </TBox>
+  </TBox>
+  //
+  //
+  // X
+</template>
 ```
 
 ##### justifyContent
@@ -706,32 +741,34 @@ Allowed values: `flex-start` `center` `flex-end` `space-between` `space-around`
 See [justify-content](https://css-tricks.com/almanac/properties/j/justify-content/).
 
 ```vue
-<TBox justifyContent="flex-start">
-	<TText>X</TText>
-</TBox>
-// [X      ]
+<template>
+  <TBox justify-content="flex-start">
+    <TText>X</TText>
+  </TBox>
+  // [X      ]
 
-<TBox justifyContent="center">
-	<TText>X</TText>
-</TBox>
-// [   X   ]
+  <TBox justify-content="center">
+    <TText>X</TText>
+  </TBox>
+  // [   X   ]
 
-<TBox justifyContent="flex-end">
-	<TText>X</TText>
-</TBox>
-// [      X]
+  <TBox justify-content="flex-end">
+    <TText>X</TText>
+  </TBox>
+  // [      X]
 
-<TBox justifyContent="space-between">
-	<TText>X</TText>
-	<TText>Y</TText>
-</TBox>
-// [X      Y]
+  <TBox justify-content="space-between">
+    <TText>X</TText>
+    <TText>Y</TText>
+  </TBox>
+  // [X      Y]
 
-<TBox justifyContent="space-around">
-	<TText>X</TText>
-	<TText>Y</TText>
-</TBox>
-// [  X   Y  ]
+  <TBox justify-content="space-around">
+    <TText>X</TText>
+    <TText>Y</TText>
+  </TBox>
+  // [  X   Y  ]
+</template>
 ```
 
 #### Visibility
@@ -756,39 +793,41 @@ If `borderStyle` is `undefined` (which it is by default), no border will be adde
 Temir uses border styles from [`cli-boxes`](https://github.com/sindresorhus/cli-boxes) module.
 
 ```vue
-<TBox flexDirection="column">
-	<TBox>
-		<TBox borderStyle="single" :marginRight="2">
-			<TText>single</TText>
-		</TBox>
+<template>
+  <TBox flex-direction="column">
+    <TBox>
+      <TBox border-style="single" :margin-right="2">
+        <TText>single</TText>
+      </TBox>
 
-		<TBox borderStyle="double" :marginRight="2">
-			<TText>double</TText>
-		</TBox>
+      <TBox border-style="double" :margin-right="2">
+        <TText>double</TText>
+      </TBox>
 
-		<TBox borderStyle="round" :marginRight="2">
-			<TText>round</TText>
-		</TBox>
+      <TBox border-style="round" :margin-right="2">
+        <TText>round</TText>
+      </TBox>
 
-		<TBox borderStyle="bold">
-			<TText>bold</TText>
-		</TBox>
-	</TBox>
+      <TBox border-style="bold">
+        <TText>bold</TText>
+      </TBox>
+    </TBox>
 
-	<TBox :marginTop="1">
-		<TBox borderStyle="singleDouble" :marginRight="2">
-			<TText>singleDouble</TText>
-		</TBox>
+    <TBox :margin-top="1">
+      <TBox border-style="singleDouble" :margin-right="2">
+        <TText>singleDouble</TText>
+      </TBox>
 
-		<TBox borderStyle="doubleSingle" :marginRight="2">
-			<TText>doubleSingle</TText>
-		</TBox>
+      <TBox border-style="doubleSingle" :margin-right="2">
+        <TText>doubleSingle</TText>
+      </TBox>
 
-		<TBox borderStyle="classic">
-			<TText>classic</TText>
-		</TBox>
-	</TBox>
-</TBox>
+      <TBox border-style="classic">
+        <TText>classic</TText>
+      </TBox>
+    </TBox>
+  </TBox>
+</template>
 ```
 
 
@@ -799,10 +838,12 @@ Type: `string`
 Change border color.
 Accepts the same values as [`color`](#color) in `<Text>` component.
 
-```jsx
-<TBox borderStyle="round" borderColor="green">
-	<TText>Green Rounded Box</TText>
-</TBox>
+```vue
+<template>
+  <TBox border-style="round" border-color="green">
+    <TText>Green Rounded Box</TText>
+  </TBox>
+</template>
 ```
 
 ### `<Newline>`
