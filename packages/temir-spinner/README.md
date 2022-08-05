@@ -13,18 +13,9 @@ $ npm install @temir/spinner
 ![temir-spinner](./media/temir-spinner.gif)
 
 ```vue
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core'
+<script lang="ts" setup>
 import { TBox, TText } from '@temir/core'
 import TSpinner from '@temir/spinner'
-
-export default defineComponent({
-  components: {
-    TBox,
-    TText,
-    TSpinner,
-  },
-})
 </script>
 
 <template>
