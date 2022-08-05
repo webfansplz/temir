@@ -2,6 +2,7 @@ import { computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/
 import * as spinners from 'cli-spinners'
 import type { SpinnerName } from 'cli-spinners'
 import { TText } from '@temir/core'
+export type { SpinnerName } from 'cli-spinners'
 
 export interface TSpinnerProps {
   /**
