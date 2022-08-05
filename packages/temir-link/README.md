@@ -13,18 +13,9 @@ $ npm install @temir/link
 ![temir-link](./media/temir-link.png)
 
 ```vue
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core'
+<script lang="ts" setup>
 import { TBox, TText } from '@temir/core'
 import TLink from '@temir/link'
-
-export default defineComponent({
-  components: {
-    TBox,
-    TText,
-    TLink,
-  },
-})
 </script>
 
 <template>
