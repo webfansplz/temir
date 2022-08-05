@@ -58,7 +58,7 @@ setInterval(() => {
 
 ## Components
 
-### `<TText>`
+### `<Text>`
 
 This component can display text, and change its style to make it bold, underline, italic or strikethrough.
 
