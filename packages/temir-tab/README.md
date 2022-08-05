@@ -42,5 +42,5 @@ const selectedText = computed(() => tabs[activeIndex.value])
   </TBox>
 </template>
 
-``
+```
 
