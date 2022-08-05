@@ -5,7 +5,7 @@ import type { StdinProps, TBoxProps } from '@temir/core'
 import { TBox, TText, useStdin } from '@temir/core'
 
 export interface TTabProps {
-  name: string
+  name?: string
 }
 
 /**
@@ -22,8 +22,10 @@ interface KeyMapProps {
  * A <Tab> component
  */
 const TTab = defineComponent<TTabProps>({
-  setup(_, { slots }) {
-    return () => (h(Fragment, slots.default()))
+  props: (['name'] as undefined),
+  setup(props, { slots }) {
+    const text = slots?.default?.()
+    return () => (text ? h(Fragment, text) : props.name ?? '')
   },
 })
 
@@ -209,7 +211,6 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
 
     function normalizeChild(children: VNode[]) {
       return children.map((item, key) => {
-        const { name } = item.props
         const colors = {
           backgroundColor: activeTab.value === key ? (props.isFocused !== false ? 'green' : 'gray') : undefined,
           color: activeTab.value === key ? 'black' : undefined,
@@ -221,7 +222,6 @@ const TabsWithStdin = defineComponent<TabsWithStdinProps>({
             color: 'gray',
           }, normalizedSeparator.value),
           h(TBox, {
-            key: name,
             flexDirection: props.flexDirection,
           }, [
             props.showIndex && h(TText, {
@@ -263,7 +263,8 @@ const TTabs = defineComponent<TTabsProps>({
   setup(props, { slots }) {
     const { isRawModeSupported, stdin, setRawMode } = useStdin()
     return () => {
-      const children = slots.default()
+      const child = slots.default()
+      const children = child?.[0]?.shapeFlag === 16 ? child?.[0]?.children : child
       return h(TabsWithStdin, {
         isRawModeSupported,
         stdin,
