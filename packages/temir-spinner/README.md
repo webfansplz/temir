@@ -53,3 +53,10 @@ Type: `string`<br>
 Defaults: `dots`
 
 Type of a spinner. See [cli-spinners](https://github.com/sindresorhus/cli-spinners) for available spinners.
+
+
+## Related
+
+- [cli-spinners](https://github.com/sindresorhus/cli-spinners)
+
+- [ink-spinner](https://github.com/vadimdemedes/ink-spinner)
