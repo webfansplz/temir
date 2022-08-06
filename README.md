@@ -55,6 +55,10 @@ setInterval(() => {
 
 <img src="./media/temir-demo.gif" />
 
+## HMR Support
+
+<img src="./media/temir-hmr.gif" />
+
 
 ## Contents
 

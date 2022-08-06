@@ -56,6 +56,11 @@ setInterval(() => {
 <img src="./media/temir-demo.gif" />
 
 
+## HMR支持
+
+<img src="./media/temir-hmr.gif" />
+
+
 ## 内容
 
 - [快速开始](#getting-started)
