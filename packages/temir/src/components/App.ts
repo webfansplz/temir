@@ -237,6 +237,8 @@ export const App = defineComponent<AppProps>({
     }
 
     return () => {
+      // Override component name
+      (props.children as { name: string }).name = 'TApp'
       return h(props.children)
     }
   },
