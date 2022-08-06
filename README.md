@@ -86,7 +86,7 @@ temir main.ts
 temir build main.ts
 ```
 
-You can also check it out this example to get started.
+You can also check it out this [example](https://github.com/webfansplz/temir/tree/main/examples/hi-temir) to get started.
 
 Temir uses Yoga - a Flexbox layout engine to build great user interfaces for your CLIs using familiar CSS-like props you've used when building apps for the browser. It's important to remember that each element is a Flexbox container. Think of it as if each <div> in the browser had display: flex. See <Box> built-in component below for documentation on how to use Flexbox layouts in Ink. Note that all text must be wrapped in a <Text> component.
 
