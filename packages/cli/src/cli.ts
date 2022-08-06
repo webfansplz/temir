@@ -11,6 +11,7 @@ cli
 
 cli
   .command('build [file]')
+  .option('-od, --outDir', 'Output Dir')
   .option('-m, --minify', 'Minify the output')
   .option('-a, --all', 'Build all the deps into bundles')
   .action(buildBundle)
