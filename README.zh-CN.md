@@ -68,6 +68,7 @@ setInterval(() => {
   - [`<Tab>`](https://github.com/webfansplz/temir/tree/main/packages/temir-tab)
   - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
   - 💻 持续补充中，欢迎贡献。
+- [例子](https://github.com/webfansplz/temir/tree/main/examples)
 
 ## 快速开始
 

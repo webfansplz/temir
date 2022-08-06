@@ -68,6 +68,7 @@ setInterval(() => {
   - [`<Tab>`](https://github.com/webfansplz/temir/tree/main/packages/temir-tab)
   - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
   - 💻 Still working and welcome to contribute.
+- [Examples](https://github.com/webfansplz/temir/tree/main/examples)
 
 ## Getting Started
 
@@ -970,4 +971,4 @@ import { TBox, TSpacer, TText } from '@temir/core'
 
 This project is highly inspired by [ink](https://github.com/vadimdemedes/ink)
 
-[vite-node](https://github.com/antfu/vite-node) made the HMR support easily.
+[vite-node](https://github.com/antfu/vite-node) made the HMR support easily
