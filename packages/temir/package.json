@@ -25,12 +25,12 @@
     ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.cjs"
     },
     "./*": "./*"
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*.cjs",

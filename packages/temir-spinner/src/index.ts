@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
-import * as spinners from 'cli-spinners'
+import spinners from 'cli-spinners'
 import type { SpinnerName } from 'cli-spinners'
 import { TText } from '@temir/core'
 export type { SpinnerName } from 'cli-spinners'
@@ -28,14 +28,14 @@ const TSpinner = defineComponent<TSpinnerProps>({
     let timer = null
     onMounted(() => {
       timer = setInterval(() => {
-        frame.value = (frame.value + 1) % spinner.value.frames.length
+        frame.value = (frame.value + 1) % spinner.value?.frames?.length
       }, spinner.value.interval)
     })
     onUnmounted(() => {
       clearInterval(timer)
     })
     return () => {
-      return h(TText, {}, spinner.value.frames[frame.value])
+      return h(TText, {}, spinner.value?.frames[frame.value])
     }
   },
 })
