@@ -59,6 +59,9 @@ setInterval(() => {
   - [`<Box>`](#box)
   - [`<Newline>`](#newline)
   - [`<Spacer>`](#spacer)
+  - [`<Link>`](https://github.com/webfansplz/temir/tree/main/packages/temir-link)
+  - [`<Tab>`](https://github.com/webfansplz/temir/tree/main/packages/temir-tab)
+  - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
 
 ## Getting Started
 
