@@ -960,3 +960,9 @@ import { TBox, TSpacer, TText } from '@temir/core'
 </template>
 
 ```
+
+## Credits
+
+This project is highly inspired by [ink](https://github.com/vadimdemedes/ink)
+
+[vite-node](https://github.com/antfu/vite-node) made the HMR support easily.
