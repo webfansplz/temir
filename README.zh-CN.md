@@ -972,4 +972,4 @@ import { TBox, TSpacer, TText } from '@temir/core'
 
 这个项目的灵感来源于[ink](https://github.com/vadimdemedes/ink)
 
-[vite-node](https://github.com/antfu/vite-node)使HMR支持变得容易。
+[vite-node](https://github.com/antfu/vite-node)为实现HMR提供了强力的支持
