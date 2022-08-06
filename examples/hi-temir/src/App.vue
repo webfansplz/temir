@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TBox, TText } from '@temir/core'
+import { TText } from '@temir/core'
 </script>
 
 <template>
