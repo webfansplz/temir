@@ -8,12 +8,12 @@ export interface TTextProps {
   /**
    * Change text color. Temir uses chalk under the hood, so all its functionality is supported.
    */
-  readonly color?: typeof ForegroundColor
+  readonly color?: typeof ForegroundColor | string
 
   /**
    * Same as `color`, but for background.
    */
-  readonly backgroundColor?: typeof ForegroundColor
+  readonly backgroundColor?: typeof ForegroundColor | string
 
   /**
    * Dim the color (emit a small amount of light).
