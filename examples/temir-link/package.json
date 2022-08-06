@@ -1,0 +1,16 @@
+{
+  "name": "temir-link",
+  "license": "MIT",
+  "scripts": {
+    "dev": "temir src/main.ts",
+    "build": "temir build src/main.ts",
+    "start": "pnpm run build && node dist/main.js"
+  },
+  "dependencies": {
+    "@temir/core": "0.0.1",
+    "@temir/link": "0.0.1"
+  },
+  "devDependencies": {
+    "@temir/cli": "0.0.1"
+  }
+}
