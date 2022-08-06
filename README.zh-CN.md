@@ -9,29 +9,29 @@
 
 
 <p align='center'>
-English | <a href='./README.zh-CN.md'>简体中文</a>
+简体中文 | <a href='./README.md'>English</a>
 </p>
 
-> Vue for CLIs. Build your CLI output using components.
+> 使用Vue组件构建你的命令行界面应用 
 
-Temir provides the same component-based UI building experience that Vue offers in the browser, but for command-line apps.
+Temir提供了与Vue在浏览器基于组件的UI构建体验相同，但是它面向的是命令行应用。
 
-It uses [Yoga](https://github.com/facebook/yoga) to build Flexbox layouts in the terminal, so most CSS-like props are available in Temir as well.
-If you are already familiar with Vue, you already know Temir.
+它使用 [Yoga](https://github.com/facebook/yoga) 在终端构建Flexbox布局，所以许多和CSS一样的属性在Temir中一样可用。
+如果你已经熟悉Vue.js，那么其实你已经熟悉Temir了。
 
-Since Temir is a Vue renderer, it means that most of the features of Vue are supported.
-Head over to [Vue](https://vuejs.org/) website for documentation on how to use it.
-Only Temir's methods will be documented in this readme.
+由于 Temir 是一个Vue渲染器，这意味着Vue的大多数特性都得到了支持。
+
+本文档只介绍关于Temir的使用方法，关于Vue可查看[官方文档](https://vuejs.org/)。
 
 ---
 
-## Install
+## 安装
 
 ```sh
 npm install @temir/core
 ```
 
-## Usage
+## 使用
 
 ```vue
 <script lang="ts" setup>
@@ -56,10 +56,10 @@ setInterval(() => {
 <img src="./media/temir-demo.gif" />
 
 
-## Contents
+## 内容
 
-- [Getting Started](#getting-started)
-- [Components](#components)
+- [快速开始](#getting-started)
+- [组件](#components)
   - [`<Text>`](#text)
   - [`<Box>`](#box)
   - [`<Newline>`](#newline)
@@ -67,11 +67,11 @@ setInterval(() => {
   - [`<Link>`](https://github.com/webfansplz/temir/tree/main/packages/temir-link)
   - [`<Tab>`](https://github.com/webfansplz/temir/tree/main/packages/temir-tab)
   - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
-  - 💻 Still working and welcome to contribute.
+  - 💻 持续补充中，欢迎贡献。
 
-## Getting Started
+## 快速开始
 
-Use `@temir/cli` to quickly scaffold a new Temir-based CLI.
+使用 `@temir/cli` 快速搭建一个基于Temir的CLI。
 
 ```sh
 
@@ -83,25 +83,24 @@ touch main.ts
 
 npm install @temir/cl
 
-# Dev
+# Dev (开发)
 
 temir main.ts
 
-# Build
+# Build (打包)
 
 temir build main.ts
 ```
 
-You can also check it out this [example](https://github.com/webfansplz/temir/tree/main/examples/hi-temir) to get started.Feel free to play around with the example and fork this repl at [repl.it sandbox](https://replit.com/@webfansplz/hi-temir?v=1)
+你也可以通过下载这个 [例子](https://github.com/webfansplz/temir/tree/main/examples/hi-temir) 来快速开始，你也可以打开 [repl.it sandbox](https://replit.com/@webfansplz/hi-temir?v=1)来在线体验和尝试它。
 
-Temir uses Yoga - a Flexbox layout engine to build great user interfaces for your CLIs using familiar CSS-like props you've used when building apps for the browser. It's important to remember that each element is a Flexbox container. Think of it as if each <div> in the browser had display: flex. See <Box> built-in component below for documentation on how to use Flexbox layouts in Ink. Note that all text must be wrapped in a <Text> component.
+Temir 使用 Yoga - 一款Flexbox布局引擎使用你在构建浏览器应用时使用过的类似CSS的属性，为你的CLI构建出色的用户界面。 重要的是要记住，每个元素都是一个Flexbox容器。可以认为浏览器中的每个<div>都有display: flex。有关如何在Temir中使用Flexbox布局的文档，请参阅下面的<Box>内置组件。注意，所有文本都必须包装在<text>组件中。
 
-## Components
+## 组件
 
-### `<Text>`
+### 文本组件 `<Text>`
 
-This component can display text, and change its style to make it bold, underline, italic or strikethrough.
-
+这个组件可以显示文本，并将其样式更改为粗体、下划线、斜体或删除线。
 
 ![temir-text-props](./media/temir-text-props.png)
 
@@ -140,14 +139,15 @@ This component can display text, and change its style to make it bold, underline
 
 ```
 
-**Note:** `<Text>` allows only text nodes and nested `<Text>` components inside of it. For example, `<Box>` component can't be used inside `<Text>`.
+**注意:** `<Text>` 只允许文本节点和嵌套的 `<Text>` 组件作为他的子元素。例如， `<Box>` 组件不能在 `<Text>` 组件中使用。
 
 #### color
 
 Type: `string`
 
-Change text color.
-Temir uses [chalk](https://github.com/chalk/chalk) under the hood, so all its functionality is supported.
+改变文本颜色。
+
+Temir在内部使用[chalk](https://github.com/chalk/chalk)，所以它的所有功能都是支持的。
 
 ```vue
 <TBox flex-direction="column">
@@ -169,7 +169,7 @@ Temir uses [chalk](https://github.com/chalk/chalk) under the hood, so all its fu
 
 Type: `string`
 
-Same as `color` above, but for background.
+与上面的“颜色”相同，但用于背景。
 
 ```vue
 <TBox flex-direction="column">
@@ -193,7 +193,7 @@ Same as `color` above, but for background.
 Type: `boolean`\
 Default: `false`
 
-Dim the color (emit a small amount of light).
+调暗颜色(减少亮度)。
 
 ```vue
 <Text color="red" dimColor>
@@ -208,35 +208,35 @@ Dim the color (emit a small amount of light).
 Type: `boolean`\
 Default: `false`
 
-Make the text bold.
+将文本加粗。
 
 #### italic
 
 Type: `boolean`\
 Default: `false`
 
-Make the text italic.
+使文本斜体。
 
 #### underline
 
 Type: `boolean`\
 Default: `false`
 
-Make the text underlined.
+给文字添加下划线。
 
 #### strikethrough
 
 Type: `boolean`\
 Default: `false`
 
-Make the text crossed with a line.
+给文字添加删除线。
 
 #### inverse
 
 Type: `boolean`\
 Default: `false`
 
-Inverse background and foreground colors.
+调换字体和背景的颜色。
 
 ```vue
 <TText color="yellow" :inverse="true">
@@ -252,9 +252,10 @@ Type: `string`\
 Allowed values: `wrap` `truncate` `truncate-start` `truncate-middle` `truncate-end`\
 Default: `wrap`
 
-This property tells Temir to wrap or truncate text if its width is larger than container.
-If `wrap` is passed (by default), Temir will wrap text and split it into multiple lines.
-If `truncate-*` is passed, Temir will truncate text instead, which will result in one line of text with the rest cut off.
+
+此属性告诉Temir，如果文本宽度大于容器，则对其进行换行或截断。
+默认情况下，Temir将会对文本进行换行并将其分成多行。
+如果传入`truncate-*`， Temir将替换截断文本，这将导致只输出一行文本，其余部分被截断。
 
 ```vue
 <template>
@@ -289,8 +290,8 @@ If `truncate-*` is passed, Temir will truncate text instead, which will result i
 
 ### `<Box>`
 
-`<Box>` is an essential Temir component to build your layout.
-It's like `<div style="display: flex">` in the browser.
+`<Box>`是构建布局必不可少的Temir组件。
+这就像在浏览器中`<div style='display: flex'>`。
 
 ```vue
 <script>
@@ -304,14 +305,14 @@ import { TBox, TText } from '@temir/core'
 </template>
 ```
 
-#### Dimensions
+#### 尺寸
 
 ##### width
 
 Type: `number` `string`
 
-Width of the element in spaces.
-You can also set it in percent, which will calculate the width based on the width of parent element.
+元素在空间中的宽度。
+你还可以将其设置为百分比，它将根据父元素的宽度计算宽度。
 
 ```vue
 <template>
@@ -343,8 +344,8 @@ You can also set it in percent, which will calculate the width based on the widt
 
 Type: `number` `string`
 
-Height of the element in lines (rows).
-You can also set it in percent, which will calculate the height based on the height of parent element.
+元素的行高。
+你还可以将其设置为百分比，它将根据父元素的高度计算高度。
 
 ```vue
 <template>
@@ -374,15 +375,15 @@ You can also set it in percent, which will calculate the height based on the hei
 
 Type: `number`
 
-Sets a minimum width of the element.
-Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/872.
+设置元素的最小宽度。
+目前还不支持百分比，请参阅 https://github.com/facebook/yoga/issues/872。
 
 ##### minHeight
 
 Type: `number`
 
-Sets a minimum height of the element.
-Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/872.
+设置元素的最小高度。
+目前还不支持百分比，请参阅 https://github.com/facebook/yoga/issues/872.
 
 #### Padding
 
@@ -391,49 +392,49 @@ Percentages aren't supported yet, see https://github.com/facebook/yoga/issues/87
 Type: `number`\
 Default: `0`
 
-Top padding.
+顶部内边距
 
 ##### paddingBottom
 
 Type: `number`\
 Default: `0`
 
-Bottom padding.
+底部内边距
 
 ##### paddingLeft
 
 Type: `number`\
 Default: `0`
 
-Left padding.
+左侧内边距
 
 ##### paddingRight
 
 Type: `number`\
 Default: `0`
 
-Right padding.
+右侧内边距
 
 ##### paddingX
 
 Type: `number`\
 Default: `0`
 
-Horizontal padding. Equivalent to setting `paddingLeft` and `paddingRight`.
+水平内边距。相当于设置`paddingLeft`和`paddingRight`。
 
 ##### paddingY
 
 Type: `number`\
 Default: `0`
 
-Vertical padding. Equivalent to setting `paddingTop` and `paddingBottom`.
+垂直内边距。相当于设置`paddingTop` and `paddingBottom`。
 
 ##### padding
 
 Type: `number`\
 Default: `0`
 
-Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `paddingLeft` and `paddingRight`.
+所有的内边距。相当于设置 `paddingTop`，`paddingBottom`，`paddingLeft` and `paddingRight`。
 
 ```vue
 <template>
@@ -462,7 +463,7 @@ Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `padd
   </TBox>
 
   <TBox :padding="2">
-    <TText>Top, bottom, left and right</TText>
+    <TText>Top，bottom，left and right</TText>
   </TBox>
 </template>
 
@@ -475,49 +476,49 @@ Padding on all sides. Equivalent to setting `paddingTop`, `paddingBottom`, `padd
 Type: `number`\
 Default: `0`
 
-Top margin.
+顶部外边距
 
 ##### marginBottom
 
 Type: `number`\
 Default: `0`
 
-Bottom margin.
+底部外边距
 
 ##### marginLeft
 
 Type: `number`\
 Default: `0`
 
-Left margin.
+左侧外边距
 
 ##### marginRight
 
 Type: `number`\
 Default: `0`
 
-Right margin.
+右侧外边距
 
 ##### marginX
 
 Type: `number`\
 Default: `0`
 
-Horizontal margin. Equivalent to setting `marginLeft` and `marginRight`.
+水平外边距。相当于设置 `marginLeft` and `marginRight`。
 
 ##### marginY
 
 Type: `number`\
 Default: `0`
 
-Vertical margin. Equivalent to setting `marginTop` and `marginBottom`.
+垂直外边距。相当于设置 `marginTop` and `marginBottom`。
 
 ##### margin
 
 Type: `number`\
 Default: `0`
 
-Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
+所有的外边距。相当于设置 `marginTop`, `marginBottom`, `marginLeft` and `marginRight`。
 
 ```vue
 <template>
@@ -558,7 +559,7 @@ Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginL
 Type: `number`\
 Default: `0`
 
-See [flex-grow](https://css-tricks.com/almanac/properties/f/flex-grow/).
+请查阅 [flex-grow](https://css-tricks.com/almanac/properties/f/flex-grow/).
 
 ```vue
 <template>
@@ -576,7 +577,7 @@ See [flex-grow](https://css-tricks.com/almanac/properties/f/flex-grow/).
 Type: `number`\
 Default: `1`
 
-See [flex-shrink](https://css-tricks.com/almanac/properties/f/flex-shrink/).
+请查阅 [flex-shrink](https://css-tricks.com/almanac/properties/f/flex-shrink/).
 
 ```vue
 <template>
@@ -596,7 +597,7 @@ See [flex-shrink](https://css-tricks.com/almanac/properties/f/flex-shrink/).
 
 Type: `number` `string`
 
-See [flex-basis](https://css-tricks.com/almanac/properties/f/flex-basis/).
+请查阅 [flex-basis](https://css-tricks.com/almanac/properties/f/flex-basis/).
 
 ```vue
 <template>
@@ -633,7 +634,7 @@ See [flex-basis](https://css-tricks.com/almanac/properties/f/flex-basis/).
 Type: `string`\
 Allowed values: `row` `row-reverse` `column` `column-reverse`
 
-See [flex-direction](https://css-tricks.com/almanac/properties/f/flex-direction/).
+请查阅 [flex-direction](https://css-tricks.com/almanac/properties/f/flex-direction/).
 
 ```vue
 <template>
@@ -677,7 +678,7 @@ See [flex-direction](https://css-tricks.com/almanac/properties/f/flex-direction/
 Type: `string`\
 Allowed values: `flex-start` `center` `flex-end`
 
-See [align-items](https://css-tricks.com/almanac/properties/a/align-items/).
+请查阅 [align-items](https://css-tricks.com/almanac/properties/a/align-items/).
 
 ```vue
 <template>
@@ -740,7 +741,7 @@ Type: `string`\
 Default: `auto`\
 Allowed values: `auto` `flex-start` `center` `flex-end`
 
-See [align-self](https://css-tricks.com/almanac/properties/a/align-self/).
+请查阅 [align-self](https://css-tricks.com/almanac/properties/a/align-self/).
 
 ```vue
 <template>
@@ -778,7 +779,7 @@ See [align-self](https://css-tricks.com/almanac/properties/a/align-self/).
 Type: `string`\
 Allowed values: `flex-start` `center` `flex-end` `space-between` `space-around`
 
-See [justify-content](https://css-tricks.com/almanac/properties/j/justify-content/).
+请查阅 [justify-content](https://css-tricks.com/almanac/properties/j/justify-content/).
 
 ```vue
 <template>
@@ -819,7 +820,7 @@ Type: `string`\
 Allowed values: `flex` `none`\
 Default: `flex`
 
-Set this property to `none` to hide the element.
+设置此属性为`none`以隐藏该元素。
 
 #### Borders
 
@@ -828,9 +829,8 @@ Set this property to `none` to hide the element.
 Type: `string`\
 Allowed values: `single` `double` `round` `bold` `singleDouble` `doubleSingle` `classic`
 
-Add a border with a specified style.
-If `borderStyle` is `undefined` (which it is by default), no border will be added.
-Temir uses border styles from [`cli-boxes`](https://github.com/sindresorhus/cli-boxes) module.
+添加具有指定样式的边框，默认情况下不添加。
+Temir从[`cli-boxes`](https://github.com/sindresorhus/cli-boxes)模块中使用边框样式。
 
 ```vue
 <template>
@@ -875,9 +875,11 @@ Temir uses border styles from [`cli-boxes`](https://github.com/sindresorhus/cli-
 
 Type: `string`
 
-Change border color.
-Accepts the same values as [`color`](#color) in `<Text>` component.
+改变边框颜色。
 
+接受与`<Text>`组件中的[`color`](#color)相同的值。
+
+```vue
 ```vue
 <template>
   <TBox border-style="round" border-color="green">
@@ -888,15 +890,15 @@ Accepts the same values as [`color`](#color) in `<Text>` component.
 
 ### `<Newline>`
 
-Adds one or more newline (`\n`) characters.
-Must be used within `<Text>` components.
+添加一个或多个换行符(`\n`)。
+必须在' <Text> '组件中使用。
 
 #### count
 
 Type: `number`\
 Default: `1`
 
-Number of newlines to insert.
+要插入的换行数。
 
 ```vue
 <script>
@@ -928,10 +930,10 @@ World
 
 ### `<Spacer>`
 
-A flexible space that expands along the major axis of its containing layout.
-It's useful as a shortcut for filling all the available spaces between elements.
+沿其包含布局的主轴展开的灵活空间。
+作为填充元素之间所有可用空间的快捷方式，它非常有用。
 
-For example, using `<Spacer>` in a `<Box>` with default flex direction (`row`) will position "Left" on the left side and will push "Right" to the right side.
+例如，在具有默认伸缩方向(`row`)的`<Box>`中使用`<Spacer>`将把"Left"定位到左边，并将"Right"推到右边。
 
 ```vue
 <script lang="ts" setup>
@@ -948,8 +950,8 @@ import { TBox, TSpacer, TText } from '@temir/core'
 
 ```
 
-In a vertical flex direction (`column`), it will position "Top" to the top of the container and push "Bottom" to the bottom of it.
-Note, that container needs to be tall to enough to see this in effect.
+在垂直伸缩方向(`column`)，它会将"Top"定位到容器的顶部，并将"Bottom"推到它的底部。
+注意，容器需要足够高才能看到效果。
 
 ```vue
 <script lang="ts" setup>
@@ -966,8 +968,8 @@ import { TBox, TSpacer, TText } from '@temir/core'
 
 ```
 
-## Credits
+## 致谢
 
-This project is highly inspired by [ink](https://github.com/vadimdemedes/ink)
+这个项目的灵感来源于[ink](https://github.com/vadimdemedes/ink)
 
-[vite-node](https://github.com/antfu/vite-node) made the HMR support easily.
+[vite-node](https://github.com/antfu/vite-node)使HMR支持变得容易。
