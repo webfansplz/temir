@@ -1,4 +1,11 @@
-
+<div align="center">
+	<br>
+	<br>
+	<img width="240" alt="Ink" src="./media/logo.svg">
+	<br>
+	<br>
+	<br>
+</div>
 
 > Vue for CLIs. Build your CLI output using components.
 
@@ -55,6 +62,30 @@ setInterval(() => {
 
 ## Getting Started
 
+Use `@temir/cli` to quickly scaffold a new Temir-based CLI.
+
+```sh
+
+mkdir my-temir-cli
+
+cd my-temir-cli
+
+touch main.ts
+
+npm install @temir/cl
+
+# Dev
+
+temir main.ts
+
+# Build
+
+temir build main.ts
+```
+
+You can also check it out this example to get started.
+
+Temir uses Yoga - a Flexbox layout engine to build great user interfaces for your CLIs using familiar CSS-like props you've used when building apps for the browser. It's important to remember that each element is a Flexbox container. Think of it as if each <div> in the browser had display: flex. See <Box> built-in component below for documentation on how to use Flexbox layouts in Ink. Note that all text must be wrapped in a <Text> component.
 
 ## Components
 
