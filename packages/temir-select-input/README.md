@@ -10,6 +10,8 @@ $ npm install @temir/select-input
 
 ## usage
 
+![temir-select-input](./media/temir-select-input.gif)
+
 
 ```vue
 <script lang="ts" setup>
