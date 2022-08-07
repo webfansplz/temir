@@ -16,18 +16,19 @@ $ npm install @temir/select-input
 ```vue
 <script lang="ts" setup>
 import TSelectInput from '@temir/select-input'
+
 const items = [
   {
-    label: 'First',
-    value: 'first',
+    label: 'Vue',
+    value: 'Vue',
   },
   {
-    label: 'Second',
-    value: 'second',
+    label: 'Vite',
+    value: 'Vite',
   },
   {
-    label: 'Third',
-    value: 'third',
+    label: 'Temir',
+    value: 'Temir',
   },
 ]
 function onSelect(value) {
