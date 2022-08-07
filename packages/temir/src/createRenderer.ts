@@ -2,7 +2,7 @@
 
 import { createRenderer } from '@vue/runtime-core'
 import type { DOMElement, DOMNode } from './dom'
-import { appendChildNode, createElement, createTextNode, findRootNode, setTextNodeValue, updateProps } from './dom'
+import { appendChildNode, cleanupYogaNode, createElement, createTextNode, findRootNode, removeChildNode, setTextNodeValue, updateProps } from './dom'
 
 global.__VUE_OPTIONS_API__ = true
 global.__VUE_PROD_DEVTOOLS__ = true
@@ -24,7 +24,10 @@ const renderder = createRenderer<DOMNode, DOMElement>({
   createComment() {
     return null
   },
-  remove() { },
+  remove(el) {
+    el.parentNode && removeChildNode(el.parentNode, el)
+    el.yogaNode && cleanupYogaNode(el.yogaNode)
+  },
   parentNode() { },
   nextSibling() { },
 })

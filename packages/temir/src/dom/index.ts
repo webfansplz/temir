@@ -112,6 +112,11 @@ const markNodeAsDirty = (node?: DOMNode): void => {
   yogaNode?.markDirty()
 }
 
+export const cleanupYogaNode = (node?: Yoga.YogaNode): void => {
+  node?.unsetMeasureFunc()
+  node?.freeRecursive()
+}
+
 export const removeChildNode = (
   node: DOMElement,
   removeNode: DOMNode,
