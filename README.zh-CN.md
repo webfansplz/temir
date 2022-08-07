@@ -86,7 +86,7 @@ setInterval(() => {
     ![](./packages/temir-spinner/media/temir-spinner.gif)
   - [temir-tab](https://github.com/webfansplz/temir/tree/main/examples/temir-tab)   
     ![](./packages/temir-tab/media/temir-tab.gif)
-  - [vitest](https://github.com/webfansplz/temir/tree/main/examples/vitest)  
+  - [Vitest](https://github.com/webfansplz/temir/tree/main/examples/vitest)  
     ![](./media/temir-vitest.gif)
 
 ## 快速开始
