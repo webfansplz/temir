@@ -86,6 +86,8 @@ setInterval(() => {
     ![](./packages/temir-spinner/media/temir-spinner.gif)
   - [temir-tab](https://github.com/webfansplz/temir/tree/main/examples/temir-tab)   
     ![](./packages/temir-tab/media/temir-tab.gif)
+  - [temir-select-input](https://github.com/webfansplz/temir/tree/main/examples/temir-select-input)   
+    ![](./packages/temir-select-input/media/temir-select-input.gif)
   - [Vitest](https://github.com/webfansplz/temir/tree/main/examples/vitest)  
     ![](./media/temir-vitest.gif)
 
