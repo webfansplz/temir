@@ -129,6 +129,7 @@ export const removeChildNode = (
     markNodeAsDirty(node)
 }
 
+let staticNode
 export const appendChildNode = (
   childNode: DOMElement,
   node: DOMElement,
@@ -152,6 +153,14 @@ export const appendChildNode = (
 
   if (node.nodeName === 'temir-text' || node.nodeName === 'temir-virtual-text')
     markNodeAsDirty(node)
+
+  const rootNode = findRootNode(node)
+  if (node.internal_static) {
+    staticNode = node
+    rootNode && (rootNode.staticNode = staticNode)
+  }
+  if (node.nodeName === 'temir-root')
+    staticNode && (node.staticNode = staticNode)
 }
 
 export const setTextNodeValue = (node: TextNode, text: string): void => {

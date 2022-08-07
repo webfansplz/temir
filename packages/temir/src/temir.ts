@@ -120,9 +120,10 @@ export default class Temir {
 
     // To ensure static output is cleanly rendered before main output, clear main output first
     if (hasStaticOutput) {
-      this.log.clear()
-      this.options.stdout.write(staticOutput)
-      this.log(output)
+      // this.log.clear()
+      // this.options.stdout.write(staticOutput)
+      // this.log(output)
+      this.throttledLog(staticOutput + output)
     }
 
     if (!hasStaticOutput && output !== this.lastOutput)

@@ -1,5 +1,5 @@
 export { default as render } from './render'
 export type { RenderOptions } from './render'
-export { TBox, TText, TNewline, TSpacer } from './components'
-export type { AppProps, TBoxProps, TTextProps, TNewlineProps } from './components'
+export { TBox, TText, TNewline, TSpacer, TStatic } from './components'
+export type { AppProps, TBoxProps, TTextProps, TNewlineProps, TStaticProps } from './components'
 export * from './composables'
