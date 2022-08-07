@@ -1,0 +1,16 @@
+{
+  "name": "temir-select-input",
+  "license": "MIT",
+  "scripts": {
+    "dev": "temir src/main.ts",
+    "build": "temir build src/main.ts",
+    "start": "pnpm run build && node dist/main.js"
+  },
+  "dependencies": {
+    "@temir/core": "0.0.4",
+    "@temir/select-input": "0.0.4"
+  },
+  "devDependencies": {
+    "@temir/cli": "0.0.4"
+  }
+}
