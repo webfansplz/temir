@@ -25,6 +25,8 @@ const renderder = createRenderer<DOMNode, DOMElement>({
     return null
   },
   remove(el) {
+    if (!el)
+      return
     el.parentNode && removeChildNode(el.parentNode, el)
     el.yogaNode && cleanupYogaNode(el.yogaNode)
   },
