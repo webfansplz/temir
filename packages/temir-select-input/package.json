@@ -1,0 +1,57 @@
+{
+  "name": "@temir/select-input",
+  "type": "module",
+  "version": "0.0.4",
+  "description": "Select Input component for Temir",
+  "author": "webfansplz",
+  "license": "MIT",
+  "homepage": "https://github.com/webfansplz/temir#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webfansplz/temir.git"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "stdout",
+    "components",
+    "command-line",
+    "print",
+    "render",
+    "colors",
+    "text",
+    "select-input"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*.cjs",
+    "dist/**/*.mjs",
+    "dist/**/*.d.ts"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup"
+  },
+  "dependencies": {
+    "@temir/core": "workspace:*",
+    "@vue/runtime-core": "^3.2.37",
+    "arr-rotate": "^1.0.0",
+    "figures": "^3.2.0"
+  },
+  "devDependencies": {
+    "tsup": "^6.2.1"
+  }
+}
