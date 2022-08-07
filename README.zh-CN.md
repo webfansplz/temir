@@ -72,6 +72,7 @@ setInterval(() => {
   - [`<Link>`](https://github.com/webfansplz/temir/tree/main/packages/temir-link)
   - [`<Tab>`](https://github.com/webfansplz/temir/tree/main/packages/temir-tab)
   - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
+  - [`<SelectInput>`](https://github.com/webfansplz/temir/tree/main/packages/temir-select-input)
   - 💻 持续补充中，欢迎贡献。
 - [例子](https://github.com/webfansplz/temir/tree/main/examples)
   - [hi-temir](https://github.com/webfansplz/temir/tree/main/examples/hi-temir)  
