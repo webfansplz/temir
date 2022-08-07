@@ -1,0 +1,16 @@
+{
+  "name": "table",
+  "license": "MIT",
+  "scripts": {
+    "dev": "temir src/main.ts",
+    "build": "temir build src/main.ts",
+    "start": "pnpm run build && node dist/main.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@temir/core": "0.0.1"
+  },
+  "devDependencies": {
+    "@temir/cli": "0.0.1"
+  }
+}
