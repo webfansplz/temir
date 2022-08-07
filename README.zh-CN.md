@@ -74,6 +74,20 @@ setInterval(() => {
   - [`<Spinner>`](https://github.com/webfansplz/temir/tree/main/packages/temir-spinner)
   - 💻 持续补充中，欢迎贡献。
 - [例子](https://github.com/webfansplz/temir/tree/main/examples)
+  - [hi-temir](https://github.com/webfansplz/temir/tree/main/examples/hi-temir)  
+    ![](./media/hi-temir.png)
+  - [borders](https://github.com/webfansplz/temir/tree/main/examples/borders)   
+    ![](./media/temir-borders.png)
+  - [table](https://github.com/webfansplz/temir/tree/main/examples/table)   
+    ![](./media/temir-table.png)
+  - [temir-link](https://github.com/webfansplz/temir/tree/main/examples/temir-link)   
+    ![](./packages/temir-link/media/temir-link.png)
+  - [temir-spinner](https://github.com/webfansplz/temir/tree/main/examples/temir-spinner)   
+    ![](./packages/temir-spinner/media/temir-spinner.gif)
+  - [temir-tab](https://github.com/webfansplz/temir/tree/main/examples/temir-tab)   
+    ![](./packages/temir-tab/media/temir-tab.gif)
+  - [vitest](https://github.com/webfansplz/temir/tree/main/examples/vitest)  
+    ![](./media/temir-vitest.gif)
 
 ## 快速开始
 
