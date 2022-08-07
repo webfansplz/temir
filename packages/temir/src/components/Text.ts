@@ -112,7 +112,7 @@ export const TText = defineComponent<TTextProps>({
       return h('temir-text', {
         style: { flexGrow: 0, flexShrink: 1, flexDirection: 'row', textWrap: props.wrap ?? 'wrap', ...props },
         _temir_text: children,
-        isInsideText: !['TBox', 'TApp'].includes(instance.parent.type.name),
+        isInsideText: !['TBox', 'TApp', 'TWrap'].includes(instance.parent.type.name),
         internal_transform: transform,
       }, children)
     }

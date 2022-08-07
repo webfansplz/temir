@@ -21,7 +21,7 @@ const TLink = defineComponent<TLinkProps>({
       const children = slots.default()
       return h('temir-text', {
         _temir_text: children,
-        isInsideText: !['TBox', 'TApp'].includes(instance.parent.type.name),
+        isInsideText: !['TBox', 'TApp', 'TWrap'].includes(instance.parent.type.name),
         internal_transform: (text: string) => {
           return terminalLink(text, props.url, { fallback: props.fallback ?? true })
         },

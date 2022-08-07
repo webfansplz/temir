@@ -117,6 +117,21 @@ importers:
       '@types/terminal-link': 1.2.0
       tsup: 6.2.1_typescript@4.7.4
 
+  packages/temir-select-input:
+    specifiers:
+      '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
+      arr-rotate: ^1.0.0
+      figures: ^3.2.0
+      tsup: ^6.2.1
+    dependencies:
+      '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
+      arr-rotate: 1.0.0
+      figures: 3.2.0
+    devDependencies:
+      tsup: 6.2.1_typescript@4.7.4
+
   packages/temir-spinner:
     specifiers:
       '@temir/core': workspace:*
@@ -148,6 +163,7 @@ importers:
       '@temir/cli': workspace:*
       '@temir/core': workspace:*
       '@temir/link': workspace:*
+      '@temir/select-input': workspace:*
       '@temir/spinner': workspace:*
       '@temir/tab': workspace:*
       '@vitejs/plugin-vue': ^3.0.1
@@ -159,6 +175,7 @@ importers:
       '@temir/cli': link:../packages/cli
       '@temir/core': link:../packages/temir
       '@temir/link': link:../packages/temir-link
+      '@temir/select-input': link:../packages/temir-select-input
       '@temir/spinner': link:../packages/temir-spinner
       '@temir/tab': link:../packages/temir-tab
       '@vitejs/plugin-vue': 3.0.1_vite@2.9.14+vue@3.2.37
@@ -1129,6 +1146,11 @@ packages:
   /argparse/2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: true
+
+  /arr-rotate/1.0.0:
+    resolution: {integrity: sha512-yOzOZcR9Tn7enTF66bqKorGGH0F36vcPaSWg8fO0c0UYb3LX3VMXj5ZxEqQLNOecAhlRJ7wYZja5i4jTlnbIfQ==}
+    engines: {node: '>=4'}
+    dev: false
 
   /array-includes/3.1.5:
     resolution: {integrity: sha512-iSDYZMMyTPkiFasVqfuAQnWAYcvO/SeBSCGKePoEthjp4LEMTe4uLc7b025o4jAZpHhihh8xPo99TNWUWWkGDQ==}
@@ -2175,6 +2197,13 @@ packages:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
     dependencies:
       reusify: 1.0.4
+
+  /figures/3.2.0:
+    resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
+    engines: {node: '>=8'}
+    dependencies:
+      escape-string-regexp: 1.0.5
+    dev: false
 
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

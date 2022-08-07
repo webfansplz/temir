@@ -15,6 +15,7 @@
     "@temir/cli": "workspace:*",
     "@temir/core": "workspace:*",
     "@temir/link": "workspace:*",
+    "@temir/select-input": "workspace:*",
     "@temir/spinner": "workspace:*",
     "@temir/tab": "workspace:*",
     "@vitejs/plugin-vue": "^3.0.1",
