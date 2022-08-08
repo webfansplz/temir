@@ -10,7 +10,7 @@ $ npm install @temir/link
 
 ## usage
 
-![temir-link](./media/temir-link.png)
+![temir-link](https://raw.githubusercontent.com/webfansplz/temir/main/packages/temir-link/media/temir-link.png?token=GHSAT0AAAAAABUKZAFQJL3UPJ6XVGYB5YA6YXQ3Q2A)
 
 ```vue
 <script lang="ts" setup>
