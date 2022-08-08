@@ -2,7 +2,7 @@ import { defineComponent, h } from '@vue/runtime-core'
 import { identity, pickBy } from 'lodash'
 import type { Styles } from '../dom/styles'
 
-export interface TBoxProps extends Omit<Styles, 'textWrap'> {
+export interface TBoxProps extends Styles {
   /**
    * Margin on all sides. Equivalent to setting `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
    *
