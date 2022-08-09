@@ -1,4 +1,3 @@
-// import { resolve } from 'path'
 import { createServer } from 'vite'
 import vuePlugin from '@vitejs/plugin-vue'
 import viteJsxPlugin from '@vitejs/plugin-vue-jsx'
