@@ -104,7 +104,7 @@ cd my-temir-cli
 
 touch main.ts
 
-npm install @temir/cl
+npm install @temir/cli
 
 # Dev (开发)
 
