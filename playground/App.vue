@@ -17,7 +17,7 @@ setInterval(() => {
     align-items="center"
   >
     <TText color="#42b883">
-      🌈 Hi TEMIR !! {{ count }}
+      Hi TEMIR !! {{ count }}
     </TText>
   </TBox>
 </template>
