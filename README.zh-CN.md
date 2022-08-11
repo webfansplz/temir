@@ -140,23 +140,23 @@ Temir 使用 Yoga - 一款Flexbox布局引擎使用你在构建浏览器应用�
   I am white
 </TText>
 
-<TText :bold="true">
+<TText bold>
   I am bold
 </TText>
 
-<TText :italic="true">
+<TText italic>
   I am italic
 </TText>
 
-<TText :underline="true">
+<TText underline>
   I am underline
 </TText>
 
-<TText :strikethrough="true">
+<TText strikethrough>
   I am strikethrough
 </TText>
 
-<TText :inverse="true">
+<TText inverse>
   I am inversed
 </TText>
 
@@ -262,7 +262,7 @@ Default: `false`
 调换字体和背景的颜色。
 
 ```vue
-<TText color="yellow" :inverse="true">
+<TText color="yellow" inverse>
   Inversed Yellow
 </TText>
 ```

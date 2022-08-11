@@ -141,23 +141,23 @@ This component can display text, and change its style to make it bold, underline
   I am white
 </TText>
 
-<TText :bold="true">
+<TText bold>
   I am bold
 </TText>
 
-<TText :italic="true">
+<TText italic>
   I am italic
 </TText>
 
-<TText :underline="true">
+<TText underline>
   I am underline
 </TText>
 
-<TText :strikethrough="true">
+<TText strikethrough>
   I am strikethrough
 </TText>
 
-<TText :inverse="true">
+<TText inverse>
   I am inversed
 </TText>
 
@@ -262,7 +262,7 @@ Default: `false`
 Inverse background and foreground colors.
 
 ```vue
-<TText color="yellow" :inverse="true">
+<TText color="yellow" inverse>
   Inversed Yellow
 </TText>
 ```
