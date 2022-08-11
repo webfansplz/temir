@@ -114,7 +114,7 @@ const TSelectInput = defineComponent<TSelectInputProps>({
           : items
 
         if (typeof onHighlight === 'function')
-          onHighlight(slicedItems[nextSelectedIndex])
+          onHighlight(slicedItems.value[nextSelectedIndex])
       }
 
       if (input === 'j' || key.downArrow) {
@@ -132,7 +132,7 @@ const TSelectInput = defineComponent<TSelectInputProps>({
           : items
 
         if (typeof onHighlight === 'function')
-          onHighlight(slicedItems[nextSelectedIndex])
+          onHighlight(slicedItems.value[nextSelectedIndex])
       }
 
       if (key.return) {
