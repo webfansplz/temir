@@ -38,7 +38,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
     "@types/node": "*",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^3.0.1",
     "@vue/runtime-core": "^3.2.37",
     "eslint": "^8.20.0",
     "sinon": "^14.0.0",
