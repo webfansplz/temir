@@ -1,22 +1,23 @@
 <script lang="ts" setup>
+import { ref } from '@vue/runtime-core'
 import { TBox, TText } from '@temir/core'
-import TLink from '@temir/link'
+const count = ref(0)
+setInterval(() => {
+  count.value++
+}, 100)
 </script>
 
 <template>
   <TBox
     :margin="5"
-    width="20"
-    border-style="round"
+    :width="30"
+    :height="5"
+    border-style="double"
     justify-content="center"
+    align-items="center"
   >
-    <TLink url="https://github.com">
-      <TText color="yellow">
-        Hi
-      </TText>
-      <TText color="cyan">
-        Github
-      </TText>
-    </TLink>
+    <TText color="#42b883">
+      🌈 Hi TEMIR !! {{ count }}
+    </TText>
   </TBox>
 </template>

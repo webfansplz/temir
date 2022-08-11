@@ -7,10 +7,10 @@
     "start": "pnpm run build && node dist/main.js"
   },
   "dependencies": {
-    "@temir/core": "0.0.6",
-    "@temir/select-input": "0.0.6"
+    "@temir/core": "0.0.7",
+    "@temir/select-input": "0.0.7"
   },
   "devDependencies": {
-    "@temir/cli": "0.0.6"
+    "@temir/cli": "0.0.7"
   }
 }

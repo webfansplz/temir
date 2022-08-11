@@ -172,10 +172,10 @@ importers:
       '@temir/select-input': workspace:*
       '@temir/spinner': workspace:*
       '@temir/tab': workspace:*
-      '@vitejs/plugin-vue': 3.0.1
+      '@vitejs/plugin-vue': ^3.0.1
       '@vue/runtime-core': ^3.2.37
-      vite: 3.0.5
-      vite-node: 0.21.1
+      vite: ^2.9.14
+      vite-node: ^0.19.1
       vue: ^3.2.37
     devDependencies:
       '@temir/cli': link:../packages/cli
@@ -184,10 +184,10 @@ importers:
       '@temir/select-input': link:../packages/temir-select-input
       '@temir/spinner': link:../packages/temir-spinner
       '@temir/tab': link:../packages/temir-tab
-      '@vitejs/plugin-vue': 3.0.1_vite@3.0.5+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.1_vite@2.9.14+vue@3.2.37
       '@vue/runtime-core': 3.2.37
-      vite: 3.0.5
-      vite-node: 0.21.1
+      vite: 2.9.14
+      vite-node: 0.19.1
       vue: 3.2.37
 
 packages:
@@ -990,6 +990,17 @@ packages:
       - supports-color
     dev: false
 
+  /@vitejs/plugin-vue/3.0.1_vite@2.9.14+vue@3.2.37:
+    resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^3.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 2.9.14
+      vue: 3.2.37
+    dev: true
+
   /@vitejs/plugin-vue/3.0.1_vite@3.0.5:
     resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -999,17 +1010,6 @@ packages:
     dependencies:
       vite: 3.0.5
     dev: false
-
-  /@vitejs/plugin-vue/3.0.1_vite@3.0.5+vue@3.2.37:
-    resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^3.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: 3.0.5
-      vue: 3.2.37
-    dev: true
 
   /@vitejs/plugin-vue/3.0.1_vue@3.2.37:
     resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
@@ -3042,6 +3042,10 @@ packages:
     resolution: {integrity: sha512-g3UB796vUFIY90VIv/WX3L2c8CS2MdWUww3CNrYmqza1Fg0DURc2K/O4YrnklBdQarSJ/y8JnJYDGc+1iumQjg==}
     dev: true
 
+  /kolorist/1.5.1:
+    resolution: {integrity: sha512-lxpCM3HTvquGxKGzHeknB/sUjuVoUElLlfYnXZT73K8geR9jQbroGlSCFBax9/0mpGoD3kzcMLnOlGQPJJNyqQ==}
+    dev: true
+
   /levn/0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -4269,6 +4273,24 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
+  /vite-node/0.19.1:
+    resolution: {integrity: sha512-54INfDYN2Yhk7Ka1wqxsAzoRT+VJKSDzed1wFTnduLr7aNGM6M6+uD40KstE2uBvVldZzS7wz1UEiIZyy/qDTg==}
+    engines: {node: '>=v14.16.0'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      kolorist: 1.5.1
+      mlly: 0.5.9
+      pathe: 0.2.0
+      vite: 3.0.5
+    transitivePeerDependencies:
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
+    dev: true
+
   /vite-node/0.21.1:
     resolution: {integrity: sha512-JYEGMLovQOFoInIbSEXWApBp9ycEJEvlHFLheeR27ZXwpN7Oqy0jNJzh4gsmowTJt1VxtDwjkIU1p359Q/anAw==}
     engines: {node: '>=v14.16.0'}
@@ -4284,6 +4306,7 @@ packages:
       - stylus
       - supports-color
       - terser
+    dev: false
 
   /vite/2.9.14:
     resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
