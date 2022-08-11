@@ -1,6 +1,6 @@
 import path from 'path'
 import { build } from 'tsup'
-import vue from 'esbuild-plugin-vue'
+import { vue } from './plugins'
 export interface BuildOptions {
   // Minify the output
   minify?: boolean

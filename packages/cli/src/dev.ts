@@ -19,13 +19,20 @@ export async function runDevServer(file = 'src/main.ts') {
   const server = await createServer({
     clearScreen: false,
     logLevel: 'error',
+    resolve: {
+      mainFields: ['main'],
+    },
     plugins: [
       vuePlugin(),
       viteJsxPlugin(),
     ],
   })
   await server.pluginContainer.buildStart({})
-  const node = new ViteNodeServer(server, {})
+  const node = new ViteNodeServer(server, {
+    deps: {
+      fallbackCJS: true,
+    },
+  })
   const runner = new ViteNodeRunner({
     root: server.config.root,
     base: server.config.base,
