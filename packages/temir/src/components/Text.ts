@@ -89,19 +89,19 @@ export const TText = defineComponent<TTextProps>({
       if (backgroundColor)
         children = colorize(children, backgroundColor, 'background')
 
-      if (bold)
+      if (bold !== undefined)
         children = chalk.bold(children)
 
-      if (italic)
+      if (italic !== undefined)
         children = chalk.italic(children)
 
-      if (underline)
+      if (underline !== undefined)
         children = chalk.underline(children)
 
-      if (strikethrough)
+      if (strikethrough !== undefined)
         children = chalk.strikethrough(children)
 
-      if (inverse)
+      if (inverse !== undefined)
         children = chalk.inverse(children)
 
       return children
