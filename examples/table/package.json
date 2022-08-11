@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.3.0",
-    "@temir/core": "0.0.8"
+    "@temir/core": "0.0.9"
   },
   "devDependencies": {
-    "@temir/cli": "0.0.8"
+    "@temir/cli": "0.0.9"
   }
 }
