@@ -18,7 +18,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config': 0.25.2_qugx7qdu5zevzvxaiqyxfiwquq
       '@types/node': 18.6.3
-      '@vitejs/plugin-vue': 3.0.1_vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.1_vite@3.0.5+vue@3.2.37
       '@vue/runtime-core': 3.2.37
       eslint: 8.21.0
       sinon: 14.0.0
@@ -27,6 +27,94 @@ importers:
       unbuild: 0.7.6
       vitest: 0.20.3
       vue: 3.2.37
+
+  examples/borders:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/hi-temir:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/table:
+    specifiers:
+      '@faker-js/faker': ^7.3.0
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+    dependencies:
+      '@faker-js/faker': 7.4.0
+      '@temir/core': link:../../packages/temir
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/temir-link:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+      '@temir/link': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+      '@temir/link': link:../../packages/temir-link
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/temir-select-input:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+      '@temir/select-input': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+      '@temir/select-input': link:../../packages/temir-select-input
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/temir-spinner:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+      '@temir/spinner': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+      '@temir/spinner': link:../../packages/temir-spinner
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/temir-tab:
+    specifiers:
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+      '@temir/tab': 0.0.9
+    dependencies:
+      '@temir/core': link:../../packages/temir
+      '@temir/tab': link:../../packages/temir-tab
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
+
+  examples/vitest:
+    specifiers:
+      '@antfu/p': ^0.1.0
+      '@temir/cli': 0.0.9
+      '@temir/core': 0.0.9
+      delay: ^5.0.0
+      ms: ^2.1.3
+    dependencies:
+      '@antfu/p': 0.1.0
+      '@temir/core': link:../../packages/temir
+      delay: 5.0.0
+      ms: 2.1.3
+    devDependencies:
+      '@temir/cli': link:../../packages/cli
 
   packages/cli:
     specifiers:
@@ -42,13 +130,13 @@ importers:
       vite: 3.0.5
       vite-node: 0.21.1
     dependencies:
-      '@vitejs/plugin-vue': 3.0.1_vite@3.0.5
+      '@vitejs/plugin-vue': 3.0.1_vite@3.0.5+vue@3.2.37
       '@vitejs/plugin-vue-jsx': 1.3.10
       '@vue/compiler-sfc': 3.2.37
       cac: 6.7.12
       hash-sum: 2.0.0
       resolve-from: 5.0.0
-      tsup: 6.2.1
+      tsup: 6.2.1_typescript@4.7.4
       vite: 3.0.5
       vite-node: 0.21.1
     devDependencies:
@@ -299,6 +387,10 @@ packages:
       - supports-color
       - typescript
     dev: true
+
+  /@antfu/p/0.1.0:
+    resolution: {integrity: sha512-tA1+Hb2mkWcvUmCmwvO18lSsHzXsci6YFp6mi2vzULoR3HYQLfuF9uubvOjYy2sR3DxBM4URe6N9d8LTMlUbHw==}
+    dev: false
 
   /@babel/code-frame/7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
@@ -602,6 +694,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@faker-js/faker/7.4.0:
+    resolution: {integrity: sha512-xDd3Tvkt2jgkx1LkuwwxpNBy/Oe+LkZBTwkgEFTiWpVSZgQ5sc/LenbHKRHbFl0dq/KFeeq/szyyPtpJRKY0fg==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: false
 
   /@humanwhocodes/config-array/0.10.4:
     resolution: {integrity: sha512-mXAIHxZT3Vcpg83opl1wGlVZ9xydbfZO3r5YfRSH6Gpp2J/PfdBP0wbDa2sO6/qRbcalpoevVyW6A/fI6LfeMw==}
@@ -1001,7 +1098,7 @@ packages:
       vue: 3.2.37
     dev: true
 
-  /@vitejs/plugin-vue/3.0.1_vite@3.0.5:
+  /@vitejs/plugin-vue/3.0.1_vite@3.0.5+vue@3.2.37:
     resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1009,17 +1106,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 3.0.5
-    dev: false
-
-  /@vitejs/plugin-vue/3.0.1_vue@3.2.37:
-    resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^3.0.0
-      vue: ^3.2.25
-    dependencies:
       vue: 3.2.37
-    dev: true
 
   /@vue/babel-helper-vue-transform-on/1.0.2:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==}
@@ -1556,6 +1643,11 @@ packages:
   /defu/6.0.0:
     resolution: {integrity: sha512-t2MZGLf1V2rV4VBZbWIaXKdX/mUcYW0n2znQZoADBkGGxYL8EWqCuCZBmJPJ/Yy9fofJkyuuSuo5GSwo0XdEgw==}
     dev: true
+
+  /delay/5.0.0:
+    resolution: {integrity: sha512-ReEBKkIfe4ya47wlPYf/gu5ib6yUG0/Aez0JQZQz94kiWtRQvZIQbTiehsnwHvLSWJnQdhVeqYue7Id1dKr0qw==}
+    engines: {node: '>=10'}
+    dev: false
 
   /diff/5.1.0:
     resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
@@ -3252,7 +3344,6 @@ packages:
 
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
-    dev: true
 
   /mz/2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
@@ -4084,6 +4175,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
+    dev: true
 
   /tsup/6.2.1_typescript@4.7.4:
     resolution: {integrity: sha512-KhBhCqVA3bHrIWhkcqTUA7R69H05IcBlHEtCVLEu42XDGUzz+bDqCcfu5PwpkKJ8DqK5tpdgM/qmyk4DdUbkZw==}
@@ -4119,7 +4211,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
-    dev: true
 
   /tsutils/3.21.0_typescript@4.7.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -4171,7 +4262,6 @@ packages:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /ufo/0.8.5:
     resolution: {integrity: sha512-e4+UtA5IRO+ha6hYklwj6r7BjiGMxS0O+UaSg9HbaTefg4kMkzj4tXzEBajRR+wkxf+golgAWKzLbytCUDMJAA==}
