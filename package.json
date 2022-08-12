@@ -36,7 +36,6 @@
     "playground:dev": "pnpm --filter './playground' run dev",
     "playground:build": "pnpm --filter './playground' run build",
     "playground:start": "pnpm --filter './playground' run start",
-    "example:dev": "pnpm --filter './examples/${dir}' run dev",
     "test": "vitest",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
