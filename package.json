@@ -30,10 +30,16 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "vitest",
     "dev": "pnpm --filter './packages/**' run dev",
     "build": "pnpm --filter './packages/**' run build",
-    "release": "pnpm run build && pnpm publish -r --filter='@temir/**' --no-git-checks --access public"
+    "release": "pnpm run build && pnpm publish -r --filter='@temir/**' --no-git-checks --access public",
+    "playground:dev": "pnpm --filter './playground' run dev",
+    "playground:build": "pnpm --filter './playground' run build",
+    "playground:start": "pnpm --filter './playground' run start",
+    "example:dev": "pnpm --filter './examples/${dir}' run dev",
+    "test": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
