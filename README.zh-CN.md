@@ -63,8 +63,8 @@ setInterval(() => {
 
 ## 内容
 
-- [快速开始](#getting-started)
-- [组件](#components)
+- [快速开始](#快速开始)
+- [组件](#组件)
   - [`<Text>`](#text)
   - [`<Box>`](#box)
   - [`<Newline>`](#newline)
