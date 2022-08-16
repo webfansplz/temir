@@ -1,7 +1,7 @@
 <div align="center">
 	<br>
 	<br>
-	<img width="240" alt="Ink" src="./media/logo.svg">
+	<img width="240" alt="Temir" src="./media/logo.svg">
 	<br>
 	<br>
 	<br>
