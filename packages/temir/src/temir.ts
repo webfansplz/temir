@@ -34,7 +34,7 @@ export default class Temir {
   // Ignore last render after unmounting a tree to prevent empty output before exit
   private isUnmounted: boolean
   private rootNode: dom.DOMElement
-  private fullStaticOutput: string
+  private fullStaticOutput = ''
   private lastOutput: string
   private exitPromise?: Promise<void>
   private restoreConsole?: () => void
