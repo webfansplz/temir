@@ -2,7 +2,7 @@ import originalIsCI from 'is-ci'
 import type { DebouncedFunc } from 'lodash'
 import { throttle } from 'lodash'
 import type { Component, App as VueAppInstance } from '@vue/runtime-core'
-import { defineComponent, h } from '@vue/runtime-core'
+import { defineComponent, h, ssrContextKey } from '@vue/runtime-core'
 import signalExit from 'signal-exit'
 import patchConsole from 'patch-console'
 import ansiEscapes from 'ansi-escapes'
@@ -153,6 +153,7 @@ export default class Temir {
     })
 
     this.vueApp = renderer.createApp(Root)
+    this.vueApp.provide(ssrContextKey, {})
     this.vueApp.config.warnHandler = () => null
     this.vueApp.mount(this.rootNode)
   }

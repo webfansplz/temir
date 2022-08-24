@@ -1,6 +1,7 @@
 import path from 'path'
 import { build } from 'tsup'
-import { vue } from './plugins'
+import { VueJsxPlugin, vue } from './plugins'
+
 export interface BuildOptions {
   // Minify the output
   minify?: boolean
@@ -21,7 +22,7 @@ export function buildBundle(file: string, options: BuildOptions = {}) {
 
   build({
     entry: [normalizePath(path.resolve('./', file))],
-    esbuildPlugins: [vue()],
+    esbuildPlugins: [vue(), VueJsxPlugin()],
     minify,
     outDir,
     external: all ? [] : [/@temir/, '@vue/runtime-core'],
