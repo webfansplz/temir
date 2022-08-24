@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "@antfu/p": "^0.1.0",
-    "@temir/core": "0.0.10",
+    "@temir/core": "0.0.11",
     "delay": "^5.0.0",
     "ms": "^2.1.3"
   },
   "devDependencies": {
-    "@temir/cli": "0.0.10"
+    "@temir/cli": "0.0.11"
   }
 }
