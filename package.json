@@ -35,6 +35,7 @@
     "play:start": "pnpm --filter './playground' run start",
     "dev": "pnpm --filter './packages/**' run dev",
     "build": "pnpm --filter './packages/**' run build",
+    "lint": "eslint --fix --ext .js,.ts,.vue .",
     "release": "pnpm run build && pnpm publish -r --filter='@temir/**' --no-git-checks --access public"
   },
   "devDependencies": {

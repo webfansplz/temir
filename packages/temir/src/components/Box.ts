@@ -52,6 +52,7 @@ export interface TBoxProps extends Styles {
 
 export const TBox = defineComponent<TBoxProps>({
   name: 'TBox',
+  inheritAttrs: false,
   props: ([
     'textWrap',
     'position',
@@ -84,7 +85,6 @@ export const TBox = defineComponent<TBoxProps>({
     'borderStyle',
     'borderColor',
   ] as undefined),
-  inheritAttrs: false,
   setup(style, { slots }) {
     const transformedStyle = () => ({
       flexDirection: 'row',
