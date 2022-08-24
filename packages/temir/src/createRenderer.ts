@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 import { createRenderer } from '@vue/runtime-core'
+import { diff } from 'object-diff-patch'
 import type { DOMElement, DOMNode } from './dom'
 import { appendChildNode, cleanupYogaNode, createElement, createTextNode, findRootNode, removeChildNode, setTextNodeValue, updateProps } from './dom'
 
@@ -14,6 +15,8 @@ const renderder = createRenderer<DOMNode, DOMElement>({
   },
   insert: appendChildNode,
   patchProp(el, key, oldProps, newProps) {
+    if (!diff(oldProps, newProps))
+      return
     if (!key.startsWith('_temir_'))
       el[key] = newProps
     updateProps(el, key, newProps)

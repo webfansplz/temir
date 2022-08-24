@@ -51,5 +51,8 @@
     "unbuild": "^0.7.6",
     "vitest": "^0.20.3",
     "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "object-diff-patch": "^0.1.2"
   }
 }

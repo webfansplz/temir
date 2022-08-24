@@ -9,12 +9,15 @@ importers:
       '@vitejs/plugin-vue': ^3.0.1
       '@vue/runtime-core': ^3.2.37
       eslint: ^8.20.0
+      object-diff-patch: ^0.1.2
       sinon: ^14.0.0
       tsup: ^6.2.1
       typescript: ^4.7.4
       unbuild: ^0.7.6
       vitest: ^0.20.3
       vue: ^3.2.37
+    dependencies:
+      object-diff-patch: 0.1.2
     devDependencies:
       '@antfu/eslint-config': 0.25.2_qugx7qdu5zevzvxaiqyxfiwquq
       '@types/node': 18.6.3
@@ -3461,6 +3464,10 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
+
+  /object-diff-patch/0.1.2:
+    resolution: {integrity: sha512-qF7DeGSZkdGlrlIKCMJaMYGv6WmEDuTnA2MmE/XaeRbJ4g/9FX6e5l6WktT7UwgJkdCCKmdYpfs1dEUNahzS7g==}
+    dev: false
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
