@@ -95,7 +95,7 @@ export default class Temir {
       if (hasStaticOutput)
         this.fullStaticOutput += staticOutput
 
-      this.options.stdout.write(this.fullStaticOutput ?? `${output}`)
+      this.options.stdout.write(this.fullStaticOutput || `${output}`)
       return
     }
 
