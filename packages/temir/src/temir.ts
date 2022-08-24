@@ -34,7 +34,7 @@ export default class Temir {
   // Ignore last render after unmounting a tree to prevent empty output before exit
   private isUnmounted: boolean
   private rootNode: dom.DOMElement
-  private fullStaticOutput = ''
+  private fullStaticOutput: string
   private lastOutput: string
   private exitPromise?: Promise<void>
   private restoreConsole?: () => void
@@ -60,6 +60,10 @@ export default class Temir {
 
     // Store last output to only rerender when needed
     this.lastOutput = ''
+
+    // This variable is used only in debug mode to store full static output
+    // so that it's rerendered every time, not just new static parts, like in non-debug mode
+    this.fullStaticOutput = ''
 
     // Unmount when process exits
     this.unsubscribeExit = signalExit(this.unmount, { alwaysLast: false })
@@ -95,7 +99,7 @@ export default class Temir {
       if (hasStaticOutput)
         this.fullStaticOutput += staticOutput
 
-      this.options.stdout.write(this.fullStaticOutput || `${output}`)
+      this.options.stdout.write(`${this.fullStaticOutput}${output}`)
       return
     }
 
