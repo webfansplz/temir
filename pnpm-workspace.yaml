@@ -1,8 +1,4 @@
 packages:
-  - packages/cli
-  - packages/temir
-  - packages/temir-spinner
-  - packages/temir-link
-  - packages/temir-tab
-  - packages/temir-select-input
+  - packages/*
+  - examples/*
   - playground

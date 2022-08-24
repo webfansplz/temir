@@ -1,6 +1,6 @@
 {
   "name": "temir",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": true,
   "description": "Vue for CLI",
   "author": "webfansplz",
@@ -31,6 +31,8 @@
   },
   "scripts": {
     "test": "vitest",
+    "play:dev": "pnpm --filter './playground' run dev",
+    "play:start": "pnpm --filter './playground' run start",
     "dev": "pnpm --filter './packages/**' run dev",
     "build": "pnpm --filter './packages/**' run build",
     "release": "pnpm run build && pnpm publish -r --filter='@temir/**' --no-git-checks --access public"
