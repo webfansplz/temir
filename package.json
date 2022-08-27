@@ -39,6 +39,9 @@
     "lint": "eslint --fix --ext .js,.ts,.vue .",
     "release": "pnpm run build && pnpm publish -r --filter='@temir/**' --no-git-checks --access public"
   },
+  "dependencies": {
+    "object-diff-patch": "^0.1.2"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
     "@types/node": "*",
@@ -51,8 +54,5 @@
     "unbuild": "^0.7.6",
     "vitest": "^0.20.3",
     "vue": "^3.2.37"
-  },
-  "dependencies": {
-    "object-diff-patch": "^0.1.2"
   }
 }

@@ -1,9 +1,8 @@
 // @ts-nocheck
 
-import sliceAnsi from 'slice-ansi'
 import stringWidth from 'string-width'
+import sliceAnsi from './slice-ansi'
 import type { OutputTransformer } from './render-node-to-output'
-
 /**
  * "Virtual" output class
  *
@@ -55,7 +54,6 @@ export default class Output {
 
   get(): { output: string; height: number } {
     const output: string[] = []
-
     for (let y = 0; y < this.height; y++)
       output.push(' '.repeat(this.width))
 
@@ -63,7 +61,6 @@ export default class Output {
       const { x, y, text, transformers } = write
       const lines = text.split('\n')
       let offsetY = 0
-
       for (let line of lines) {
         const currentLine = output[y + offsetY]
 

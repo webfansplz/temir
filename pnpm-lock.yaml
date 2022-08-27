@@ -157,6 +157,7 @@ importers:
       '@types/signal-exit': ^3.0.1
       '@vue/runtime-core': ^3.2.37
       ansi-escapes: ^4.3.2
+      ansi-styles: ^5.2.0
       auto-bind: 4.0.0
       boxen: 7.0.0
       chalk: ^4.1.2
@@ -165,6 +166,7 @@ importers:
       cli-truncate: ^2.1.0
       indent-string: ^4.0.0
       is-ci: ^3.0.1
+      is-fullwidth-code-point: ^3.0.0
       lodash: ^4.17.21
       lodash-es: ^4.17.21
       patch-console: ^1.0.0
@@ -179,6 +181,7 @@ importers:
     dependencies:
       '@vue/runtime-core': 3.2.37
       ansi-escapes: 4.3.2
+      ansi-styles: 5.2.0
       auto-bind: 4.0.0
       chalk: 4.1.2
       cli-boxes: 2.2.1
@@ -186,6 +189,7 @@ importers:
       cli-truncate: 2.1.0
       indent-string: 4.0.0
       is-ci: 3.0.1
+      is-fullwidth-code-point: 3.0.0
       lodash: 4.17.21
       lodash-es: 4.17.21
       patch-console: 1.0.0
@@ -1318,6 +1322,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       color-convert: 2.0.1
+
+  /ansi-styles/5.2.0:
+    resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
+    engines: {node: '>=10'}
+    dev: false
 
   /ansi-styles/6.1.0:
     resolution: {integrity: sha512-VbqNsoz55SYGczauuup0MFUyXNQviSpFTj1RQtFzmQLk18qbVSpTFFGMT293rmDaQuKCT6InmbuEyUne4mTuxQ==}

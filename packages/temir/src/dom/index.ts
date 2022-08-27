@@ -121,6 +121,7 @@ export const removeChildNode = (
   node: DOMElement,
   removeNode: DOMNode,
 ): void => {
+
   if (removeNode.yogaNode)
     removeNode.parentNode?.yogaNode?.removeChild(removeNode.yogaNode)
 
@@ -147,16 +148,18 @@ export const appendChildNode = (
 
   childNode.parentNode = node
   node.childNodes.push(childNode)
-
   if (childNode.yogaNode) {
     node.yogaNode?.insertChild(
       childNode.yogaNode,
       node.yogaNode.getChildCount(),
     )
   }
-
+  const rootNode = findRootNode(node)
   if (node.nodeName === 'temir-text' || node.nodeName === 'temir-virtual-text')
     markNodeAsDirty(node)
+
+  rootNode?.onRender()
+
 }
 
 export const setTextNodeValue = (node: TextNode, text: string): void => {
@@ -226,7 +229,6 @@ export const updateProps = (node, key, value) => {
 
   else setAttribute(node, key, value as DOMNodeAttribute)
 }
-
 export const createElement = (nodeName: string, _, __, props): DOMElement => {
   const type = nodeName === 'temir-text' && props.isInsideText ? 'temir-virtual-text' : nodeName
   const node = createNode(type)
