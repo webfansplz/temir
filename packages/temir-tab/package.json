@@ -1,7 +1,7 @@
 {
   "name": "@temir/tab",
   "type": "module",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Tab component for Temir",
   "author": "webfansplz",
   "license": "MIT",
