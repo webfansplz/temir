@@ -211,13 +211,13 @@ importers:
     specifiers:
       '@temir/core': workspace:*
       '@types/terminal-link': ^1.2.0
+      '@vue/runtime-core': ^3.2.37
       terminal-link: ^2.1.1
       tsup: ^6.2.1
-      vue: ^3.2.37
     dependencies:
       '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
       terminal-link: 2.1.1
-      vue: 3.2.37
     devDependencies:
       '@types/terminal-link': 1.2.0
       tsup: 6.2.1
@@ -225,41 +225,41 @@ importers:
   packages/temir-select-input:
     specifiers:
       '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
       arr-rotate: ^1.0.0
       figures: ^3.2.0
       tsup: ^6.2.1
-      vue: ^3.2.37
     dependencies:
       '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
       arr-rotate: 1.0.0
       figures: 3.2.0
-      vue: 3.2.37
     devDependencies:
       tsup: 6.2.1
 
   packages/temir-spinner:
     specifiers:
       '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
       cli-spinners: ^2.7.0
       tsup: ^6.2.1
-      vue: ^3.2.37
     dependencies:
       '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
       cli-spinners: 2.7.0
-      vue: 3.2.37
     devDependencies:
       tsup: 6.2.1
 
   packages/temir-tab:
     specifiers:
       '@temir/core': workspace:*
+      '@vue/runtime-core': ^3.2.37
       readline: ^1.3.0
       tsup: ^6.2.1
-      vue: ^3.2.37
     dependencies:
       '@temir/core': link:../temir
+      '@vue/runtime-core': 3.2.37
       readline: 1.3.0
-      vue: 3.2.37
     devDependencies:
       tsup: 6.2.1
 

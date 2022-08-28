@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@temir/core": "workspace:*",
-    "vue": "^3.2.37",
+    "@vue/runtime-core": "^3.2.37",
     "arr-rotate": "^1.0.0",
     "figures": "^3.2.0"
   },
