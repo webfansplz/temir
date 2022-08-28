@@ -31,6 +31,7 @@ export async function runDevServer(file = 'src/main.ts') {
   const node = new ViteNodeServer(server, {
     deps: {
       fallbackCJS: true,
+      external: ['@vue/runtime-core']
     },
   })
   const runner = new ViteNodeRunner({

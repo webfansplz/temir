@@ -1,4 +1,4 @@
-import { defineComponent, getCurrentInstance, h } from '@vue/runtime-core'
+import { defineComponent, getCurrentInstance, h } from 'vue'
 import terminalLink from 'terminal-link'
 
 export interface TLinkProps {
