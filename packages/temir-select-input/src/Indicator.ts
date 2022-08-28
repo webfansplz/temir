@@ -1,4 +1,4 @@
-import { defineComponent, h } from '@vue/runtime-core'
+import { defineComponent, h } from 'vue'
 import { TBox, TText } from '@temir/core'
 import figures from 'figures'
 export interface IndicatorProps {

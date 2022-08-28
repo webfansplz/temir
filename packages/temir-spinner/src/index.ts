@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
+import { computed, defineComponent, h, onMounted, onUnmounted, ref } from 'vue'
 import spinners from 'cli-spinners'
 import type { SpinnerName } from 'cli-spinners'
 import { TText } from '@temir/core'

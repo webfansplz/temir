@@ -2,7 +2,6 @@
   "name": "temir",
   "version": "0.0.14",
   "private": true,
-  "packageManager": "pnpm@7.9.0",
   "description": "Vue for CLI",
   "author": "webfansplz",
   "license": "MIT",

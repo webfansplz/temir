@@ -1,6 +1,6 @@
 import readline from 'readline'
-import type { Component, VNode } from '@vue/runtime-core'
-import { Fragment, computed, defineComponent, h, onMounted, onUnmounted, ref } from '@vue/runtime-core'
+import type { Component, VNode } from 'vue'
+import { Fragment, computed, defineComponent, h, onMounted, onUnmounted, ref } from 'vue'
 import type { StdinProps, TBoxProps } from '@temir/core'
 import { TBox, TText, useStdin } from '@temir/core'
 

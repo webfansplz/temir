@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@temir/core": "workspace:*",
-    "@vue/runtime-core": "^3.2.37",
+    "vue": "^3.2.37",
     "cli-spinners": "^2.7.0"
   },
   "devDependencies": {

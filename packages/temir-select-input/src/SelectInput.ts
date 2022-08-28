@@ -1,5 +1,5 @@
-import type { ComponentOptions } from '@vue/runtime-core'
-import { computed, defineComponent, h, ref } from '@vue/runtime-core'
+import type { ComponentOptions } from 'vue'
+import { computed, defineComponent, h, ref } from 'vue'
 import { TBox, useInput } from '@temir/core'
 import arrayRotate from 'arr-rotate'
 import type { ItemProps } from './Item'
