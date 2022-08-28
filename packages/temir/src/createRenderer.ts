@@ -3,7 +3,7 @@
 import { createRenderer } from '@vue/runtime-core'
 import { diff } from 'object-diff-patch'
 import type { DOMElement, DOMNode } from './dom'
-import { appendChildNode, cleanupYogaNode, createElement, createTextNode, findRootNode, removeChildNode, setTextNodeValue, updateProps } from './dom'
+import { appendChildNode, cleanupYogaNode, createElement, createTextNode, removeChildNode, setTextNodeValue, updateProps } from './dom'
 
 global.__VUE_OPTIONS_API__ = true
 global.__VUE_PROD_DEVTOOLS__ = true
@@ -20,7 +20,6 @@ const renderder = createRenderer<DOMNode, DOMElement>({
     if (!key.startsWith('_temir_'))
       el[key] = newProps
     updateProps(el, key, newProps)
-    findRootNode(el)?.onRender()
   },
   setText: setTextNodeValue,
   setElementText: setTextNodeValue,
@@ -33,8 +32,14 @@ const renderder = createRenderer<DOMNode, DOMElement>({
     el.parentNode && removeChildNode(el.parentNode, el)
     el.yogaNode && cleanupYogaNode(el.yogaNode)
   },
-  parentNode() { },
-  nextSibling() { },
+  parentNode(node) {
+    return node.parentNode
+  },
+  nextSibling(node) {
+    if (!node.parentNode) return null
+    const index = node.parentNode.childNodes.indexOf(node)
+    return node.parentNode.childNodes[index + 1] || null
+  },
 })
 
 export default renderder

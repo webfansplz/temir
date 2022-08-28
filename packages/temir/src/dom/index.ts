@@ -154,17 +154,15 @@ export const appendChildNode = (
       node.yogaNode.getChildCount(),
     )
   }
-  const rootNode = findRootNode(node)
   if (node.nodeName === 'temir-text' || node.nodeName === 'temir-virtual-text')
     markNodeAsDirty(node)
-
-  rootNode?.onRender()
 
 }
 
 export const setTextNodeValue = (node: TextNode, text: string): void => {
   if (typeof text !== 'string')
     text = String(text)
+
   if ((node as unknown as DOMElement).nodeName === 'temir-virtual-text') {
     (node as unknown as DOMElement).childNodes = []
     const textNode: TextNode = {
@@ -180,9 +178,7 @@ export const setTextNodeValue = (node: TextNode, text: string): void => {
     node.nodeValue = text
   }
 
-  const rootNode = findRootNode(node)
   markNodeAsDirty(node)
-  rootNode?.onRender()
 }
 
 export const createTextNode = (text: string): TextNode => {

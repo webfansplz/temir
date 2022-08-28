@@ -40,20 +40,29 @@ export default class Temir {
   private restoreConsole?: () => void
   private readonly unsubscribeResize?: () => void
   private vueApp: VueAppInstance
+  private logTimer: NodeJS.Timer
 
   constructor(options: TemirOptions) {
     autoBind(this)
 
     this.options = options
     this.rootNode = dom.createNode('temir-root')
-    this.rootNode.onRender = this.onRender
     this.log = logUpdate.create(options.stdout)
+    this.rootNode.onRender = options.debug
+      ? this.onRender : throttle(this.onRender, 32, {
+        leading: true,
+        trailing: true,
+      })
+
     this.throttledLog = options.debug
       ? this.log
       : throttle(this.log, undefined, {
         leading: true,
         trailing: true,
       })
+
+
+    this.logTimer = null
 
     // Ignore last render after unmounting a tree to prevent empty output before exit
     this.isUnmounted = false
@@ -129,8 +138,9 @@ export default class Temir {
       this.log(output)
     }
 
-    if (!hasStaticOutput && output !== this.lastOutput)
+    if (!hasStaticOutput && output !== this.lastOutput) {
       this.throttledLog(output)
+    }
 
     this.lastOutput = output
   }
@@ -160,17 +170,26 @@ export default class Temir {
     this.vueApp.provide(ssrContextKey, {})
     this.vueApp.config.warnHandler = () => null
     this.vueApp.mount(this.rootNode)
+    clearInterval(this.logTimer)
+    this.logTimer = setInterval(() => {
+      this.rootNode?.onRender()
+    }, 32)
   }
 
   render(node: Component) {
     this.rootNode = dom.createNode('temir-root')
-    this.rootNode.onRender = this.onRender
+    this.rootNode.onRender = this.options.debug
+      ? this.onRender : throttle(this.onRender, 32, {
+        leading: true,
+        trailing: true,
+      })
     // this.vueApp?.unmount()
     this.createVueApp(node)
-    this.onRender()
+    // this.onRender()
   }
 
   unmount(error?: Error | number | null): void {
+    clearInterval(this.logTimer)
     if (this.isUnmounted)
       return
 
