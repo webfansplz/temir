@@ -33,8 +33,8 @@ importers:
 
   examples/borders:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
     devDependencies:
@@ -42,8 +42,8 @@ importers:
 
   examples/hi-temir:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
     devDependencies:
@@ -52,8 +52,8 @@ importers:
   examples/table:
     specifiers:
       '@faker-js/faker': ^7.3.0
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
     dependencies:
       '@faker-js/faker': 7.4.0
       '@temir/core': link:../../packages/temir
@@ -62,9 +62,9 @@ importers:
 
   examples/temir-link:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
-      '@temir/link': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
+      '@temir/link': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
       '@temir/link': link:../../packages/temir-link
@@ -73,9 +73,9 @@ importers:
 
   examples/temir-select-input:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
-      '@temir/select-input': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
+      '@temir/select-input': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
       '@temir/select-input': link:../../packages/temir-select-input
@@ -84,9 +84,9 @@ importers:
 
   examples/temir-spinner:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
-      '@temir/spinner': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
+      '@temir/spinner': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
       '@temir/spinner': link:../../packages/temir-spinner
@@ -95,9 +95,9 @@ importers:
 
   examples/temir-tab:
     specifiers:
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
-      '@temir/tab': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
+      '@temir/tab': 0.0.15
     dependencies:
       '@temir/core': link:../../packages/temir
       '@temir/tab': link:../../packages/temir-tab
@@ -107,8 +107,8 @@ importers:
   examples/vitest:
     specifiers:
       '@antfu/p': ^0.1.0
-      '@temir/cli': 0.0.14
-      '@temir/core': 0.0.14
+      '@temir/cli': 0.0.15
+      '@temir/core': 0.0.15
       delay: ^5.0.0
       ms: ^2.1.3
     dependencies:

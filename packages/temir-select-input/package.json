@@ -1,7 +1,7 @@
 {
   "name": "@temir/select-input",
   "type": "module",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Select Input component for Temir",
   "author": "webfansplz",
   "license": "MIT",
