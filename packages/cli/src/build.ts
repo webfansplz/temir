@@ -15,7 +15,7 @@ function normalizePath(filePath: string): string {
   return filePath.split(path.sep).join(path.posix.sep)
 }
 
-export function buildBundle(file: string, options: BuildOptions = {}) {
+export function buildBundle(file = 'src/main.ts', options: BuildOptions = {}) {
   const {
     minify = false, all = false, outDir = 'dist',
   } = options
