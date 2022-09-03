@@ -94,6 +94,8 @@ export const vue = (): Plugin => {
         const compiler = await getCompiler(absPath)
         const { resolveDir } = args.pluginData
         const filepath = formatPath(args.path, resolveDir)
+        const parsedResolveDir = path.dirname(path.resolve(resolveDir, args.path))
+
         const content = await fs.promises.readFile(filepath, 'utf8')
         const sfc = compiler.parse(content)
 
@@ -139,9 +141,10 @@ export const vue = (): Plugin => {
           contents += `__sfc_main.__scopeId = "data-v-${genId(args.path)}"\n`
 
         contents += '\nexport default __sfc_main'
+
         return {
           contents,
-          resolveDir,
+          resolveDir: parsedResolveDir,
           loader: isTS ? 'ts' : 'js',
           watchFiles: [filepath],
         }
