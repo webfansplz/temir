@@ -1,7 +1,7 @@
 {
   "name": "@temir/spinner",
   "type": "module",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Spinner component for Temir",
   "author": "webfansplz",
   "license": "MIT",

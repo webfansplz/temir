@@ -1,7 +1,7 @@
 {
   "name": "@temir/core",
   "type": "module",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Vue for CLI",
   "author": "webfansplz",
   "license": "MIT",
