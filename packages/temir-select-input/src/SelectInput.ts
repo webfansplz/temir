@@ -1,5 +1,5 @@
 import type { ComponentOptions } from 'vue'
-import { computed, defineComponent, h, ref } from 'vue'
+import { computed, defineComponent, h, ref, watch } from 'vue'
 import { TBox, useInput } from '@temir/core'
 import arrayRotate from 'arr-rotate'
 import type { ItemProps } from './Item'
@@ -92,11 +92,13 @@ const TSelectInput = defineComponent<TSelectInputProps>({
 
     const slicedItems = ref(null)
 
-    const hasLimit
-      = typeof customLimit === 'number' && items.length > customLimit
-    const limit = hasLimit ? Math.min(customLimit!, items.length) : items.length
 
     function onHandle(input, key) {
+      const items = props.items
+      const hasLimit
+        = typeof customLimit === 'number' && items.length > customLimit
+      const limit = hasLimit ? Math.min(customLimit!, items.length) : items.length
+
       if (input === 'k' || key.upArrow) {
         const lastIndex = (hasLimit ? limit : items.length) - 1
         const atFirstIndex = selectedIndex.value === 0
@@ -147,9 +149,17 @@ const TSelectInput = defineComponent<TSelectInputProps>({
 
     useInput(onHandle, { isActive: isFocused })
 
-    slicedItems.value = hasLimit
-      ? arrayRotate(items, rotateIndex).slice(0, limit)
-      : items
+    watch(() => props.items, (value) => {
+      const hasLimit
+        = typeof customLimit === 'number' && value.length > customLimit
+      const limit = hasLimit ? Math.min(customLimit!, value.length) : value.length
+
+      slicedItems.value = hasLimit
+        ? arrayRotate(items, rotateIndex).slice(0, limit)
+        : value
+    }, {
+      immediate: true
+    })
 
     const children = computed(() => {
       return slicedItems.value.map((item, index) => {
