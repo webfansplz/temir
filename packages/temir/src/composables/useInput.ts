@@ -112,7 +112,7 @@ interface Options {
  * };
  * ```
  */
-export const useInput = (inputHandler: Handler, options: Options = {}) => {
+export const useInput = (inputHandler: Handler, options: Options = { isActive: true }) => {
   const { stdin, setRawMode, internal_exitOnCtrlC } = useStdin()
 
   watchEffect(() => {
