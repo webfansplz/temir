@@ -7,9 +7,9 @@
     "start": "pnpm run build && node dist/main.js"
   },
   "dependencies": {
-    "@temir/core": "0.0.19"
+    "@temir/core": "0.0.20"
   },
   "devDependencies": {
-    "@temir/cli": "0.0.19"
+    "@temir/cli": "0.0.20"
   }
 }
