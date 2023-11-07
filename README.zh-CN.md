@@ -1,3 +1,7 @@
+
+# 该项目已停止维护, 请使用 [Vue TermUI](https://github.com/vue-terminal/vue-termui) 替代.
+
+
 <div align="center">
 	<br>
 	<br>
@@ -42,6 +46,7 @@ setInterval(() => {
   counter.value++
 }, 100)
 </script>
+
 
 <template>
   <TBox>

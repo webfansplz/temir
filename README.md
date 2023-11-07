@@ -1,3 +1,7 @@
+
+# This repository has been archived, please use [Vue TermUI](https://github.com/vue-terminal/vue-termui) instead.
+
+
 <div align="center">
 	<br>
 	<br>
