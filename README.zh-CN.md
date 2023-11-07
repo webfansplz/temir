@@ -1,5 +1,5 @@
 
-# 该项目已停止维护, 请使用 [Vue TermUI](https://github.com/vue-terminal/vue-termui) 替代.
+# 该项目已停止维护，请使用 [Vue TermUI](https://github.com/vue-terminal/vue-termui) 替代。
 
 
 <div align="center">
